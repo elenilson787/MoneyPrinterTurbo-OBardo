@@ -317,10 +317,28 @@ def generate_terms(task_id, params, video_script):
         # 开启素材按文案顺序匹配后，关键词本身也必须按脚本叙事顺序生成；
         # 否则后续即使顺序下载和顺序拼接，也只能复用一组全局主题词，
         # 无法改善“后面内容的画面提前出现”的问题。
+        clean_script = utils.remove_pause_tags(video_script)
+
+        if params.match_materials_to_script:
+            word_count = len(clean_script.split())
+
+            if word_count <= 120:
+                term_amount = 8
+            elif word_count <= 300:
+                term_amount = 12
+            elif word_count <= 600:
+                term_amount = 18
+            elif word_count <= 1000:
+                term_amount = 24
+            else:
+                term_amount = 30
+        else:
+            term_amount = 5
+
         video_terms = llm.generate_terms(
             video_subject=params.video_subject,
-            video_script=utils.remove_pause_tags(video_script),
-            amount=8 if params.match_materials_to_script else 5,
+            video_script=clean_script,
+            amount=term_amount,
             match_script_order=params.match_materials_to_script,
         )
     else:

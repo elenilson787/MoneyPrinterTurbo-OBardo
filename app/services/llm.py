@@ -871,12 +871,18 @@ def generate_terms(
 ## Goals:
 {goal}
 
-## Constrains:
-1. the search terms are to be returned as a json-array of strings.
-2. each search term should consist of 1-3 words, always add the main subject of the video.
-3. you must only return the json-array of strings. you must not return anything else. you must not return the script.
-4. the search terms must be related to the subject of the video.
-5. reply with english search terms only.
+## Constraints:
+1. Return the search terms as a JSON array of strings.
+2. Each search term should normally contain 3-8 descriptive English words.
+3. Each term must describe ONE concrete visual beat from the script, not merely the general topic.
+4. Prefer specific people, objects, places, actions, artifacts, architecture, documents, artworks, archaeological remains, or historical scenes.
+5. When the script names a specific object, person, place, document, building, artwork, or artifact, include that exact subject in the corresponding search term.
+6. Add useful historical context such as civilization, period, archaeology, museum, manuscript, artifact, painting, ruins, or reconstruction when it improves visual precision.
+7. Avoid vague terms such as history, ancient world, culture, lifestyle, people, background, or generic topic-only searches.
+8. The sequence of search terms must follow the narrative order of the script when script-order matching is enabled.
+9. Do not repeat nearly identical search terms unless the script genuinely returns to the same visual subject.
+10. Return only the JSON array. Do not return explanations or the script.
+11. Reply with English search terms only.
 {ordering_rule}
 
 ## Output Example:
