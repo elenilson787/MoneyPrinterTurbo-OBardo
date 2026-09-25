@@ -309,6 +309,310 @@ def _filter_materials_by_aspect(
     return filtered_items
 
 
+
+
+WIKIMEDIA_API_URL = "https://commons.wikimedia.org/w/api.php"
+
+
+def search_images_wikimedia(
+    search_term: str,
+    minimum_duration: int,
+    video_aspect: VideoAspect = VideoAspect.portrait,
+) -> List[MaterialInfo]:
+    """
+    Search Wikimedia Commons for historical image material.
+
+    Wikimedia returns images rather than video clips. Each image is represented
+    as a MaterialInfo whose duration equals the desired clip duration. The
+    download/render stage converts the image into an mp4 clip using the existing
+    MoneyPrinterTurbo image rendering pipeline.
+    """
+    logger.info(f"searching images on Wikimedia Commons: term={search_term!r}")
+
+    headers = {
+        "User-Agent": "O-Bardo-MoneyPrinterTurbo/1.0 (historical documentary media search)"
+    }
+
+    words = search_term.split()
+
+    fallback_terms = [search_term]
+
+    if len(words) >= 4:
+        fallback_terms.append(" ".join(words[:3]))
+
+    strigil_terms = [word for word in words if "strigil" in word.lower()]
+    if strigil_terms:
+        fallback_terms.extend([
+            "Roman bronze strigil",
+            "Roman strigil",
+            "strigil",
+        ])
+
+    fallback_terms = list(dict.fromkeys(fallback_terms))
+
+    pages = {}
+
+    for query_term in fallback_terms:
+        params = {
+            "action": "query",
+            "format": "json",
+            "generator": "search",
+            "gsrsearch": f"{query_term} filetype:bitmap",
+            "gsrnamespace": 6,
+            "gsrlimit": 20,
+            "prop": "imageinfo",
+            "iiprop": "url|size|mime|extmetadata",
+            "iiurlwidth": 1600,
+            "iiextmetadatafilter": "Artist|LicenseShortName|LicenseUrl|Credit|ImageDescription",
+            "iiextmetadatalanguage": "en",
+        }
+
+        logger.info(
+            f"Wikimedia search attempt: original={search_term!r}, query={query_term!r}"
+        )
+
+        try:
+            response = requests.get(
+                WIKIMEDIA_API_URL,
+                params=params,
+                headers=headers,
+                proxies=config.proxy,
+                verify=_get_tls_verify(),
+                timeout=(30, 60),
+            )
+            response.raise_for_status()
+            payload = response.json()
+        except Exception as exc:
+            logger.warning(
+                "Wikimedia Commons search attempt failed: "
+                f"query={query_term!r}, error={type(exc).__name__}, detail={exc}"
+            )
+            continue
+
+        pages = (payload.get("query") or {}).get("pages") or {}
+
+        if pages:
+            logger.info(
+                f"Wikimedia fallback matched query={query_term!r}, "
+                f"raw_results={len(pages)}"
+            )
+            break
+    results: List[MaterialInfo] = []
+
+    for page in pages.values():
+        infos = page.get("imageinfo") or []
+        if not infos:
+            continue
+
+        info = infos[0]
+        mime = str(info.get("mime") or "").lower()
+
+        if not mime.startswith("image/"):
+            continue
+
+        if mime in {"image/svg+xml", "image/gif"}:
+            continue
+
+        width = int(info.get("width") or 0)
+        height = int(info.get("height") or 0)
+
+        if width < 640 or height < 480:
+            continue
+
+        image_url = info.get("thumburl") or info.get("url")
+        if not image_url:
+            continue
+
+        extmetadata = info.get("extmetadata") or {}
+
+        def meta_value(name):
+            value = extmetadata.get(name)
+            if isinstance(value, dict):
+                return value.get("value")
+            return value
+
+        item = MaterialInfo()
+        item.provider = "wikimedia"
+        item.url = image_url
+        item.duration = max(int(minimum_duration), 1)
+        item.source_info = {
+            "provider": "wikimedia",
+            "search_term": search_term,
+            "asset_id": str(page.get("pageid") or ""),
+            "source_page": (
+                "https://commons.wikimedia.org/wiki/"
+                + str(page.get("title") or "").replace(" ", "_")
+            ),
+            "creator": meta_value("Artist"),
+            "license": meta_value("LicenseShortName"),
+            "license_url": meta_value("LicenseUrl"),
+            "credit": meta_value("Credit"),
+            "description": meta_value("ImageDescription"),
+            "rendition": {
+                "width": width,
+                "height": height,
+                "mime": mime,
+            },
+        }
+        results.append(item)
+
+    logger.info(
+        f"found {len(results)} Wikimedia Commons images for {search_term!r}"
+    )
+    return results
+
+
+def _download_wikimedia_image(image_url: str, save_dir: str) -> str:
+    if not save_dir:
+        save_dir = utils.storage_dir("cache_images", create=True)
+    elif not os.path.isdir(save_dir):
+        os.makedirs(save_dir, exist_ok=True)
+
+    clean_url = image_url.split("?")[0]
+    image_hash = utils.md5(clean_url)
+    image_path = os.path.join(save_dir, f"wikimedia-{image_hash}.jpg")
+
+    if os.path.exists(image_path) and os.path.getsize(image_path) > 0:
+        return image_path
+
+    headers = {
+        "User-Agent": "O-Bardo-MoneyPrinterTurbo/1.0 (historical documentary media search)"
+    }
+
+    try:
+        response = requests.get(
+            image_url,
+            headers=headers,
+            proxies=config.proxy,
+            verify=_get_tls_verify(),
+            timeout=(30, 120),
+        )
+        response.raise_for_status()
+
+        image = Image.open(io.BytesIO(response.content))
+        image.load()
+
+        if image.mode not in ("RGB", "L"):
+            image = image.convert("RGB")
+
+        if image.mode == "L":
+            image = image.convert("RGB")
+
+        image.save(image_path, format="JPEG", quality=92)
+        return image_path
+
+    except Exception as exc:
+        logger.error(
+            "failed to download Wikimedia image: "
+            f"error={type(exc).__name__}, detail={exc}"
+        )
+        return ""
+
+
+def _download_images_wikimedia_by_script_order(
+    *,
+    task_id: str,
+    search_terms: List[str],
+    video_aspect: VideoAspect,
+    audio_duration: float,
+    max_clip_duration: int,
+    material_directory: str,
+) -> List[str]:
+    """
+    Search one historical image per script beat and convert each one into a
+    normal mp4 clip using MoneyPrinterTurbo's existing image renderer.
+    """
+    logger.info("downloading Wikimedia images with script-order matching")
+
+    video_paths: List[str] = []
+    material_sources: list[dict[str, Any]] = []
+    total_duration = 0.0
+
+    if not material_directory:
+        image_directory = utils.storage_dir("cache_images", create=True)
+    else:
+        image_directory = material_directory
+
+    candidate_groups = []
+
+    for search_term in search_terms:
+        items = search_images_wikimedia(
+            search_term=search_term,
+            minimum_duration=max_clip_duration,
+            video_aspect=video_aspect,
+        )
+
+        if items:
+            candidate_groups.append((search_term, items))
+
+    candidate_index = 0
+
+    while candidate_groups and total_duration < audio_duration:
+        has_candidate = False
+
+        for search_term, term_items in candidate_groups:
+            if candidate_index >= len(term_items):
+                continue
+
+            has_candidate = True
+            item = term_items[candidate_index]
+
+            image_path = _download_wikimedia_image(
+                item.url,
+                image_directory,
+            )
+
+            if not image_path:
+                continue
+
+            try:
+                video_file = video.render_image_zoom_video(
+                    image_path,
+                    max_clip_duration,
+                )
+            except Exception as exc:
+                logger.error(
+                    "failed to render Wikimedia image: "
+                    f"term={search_term!r}, error={type(exc).__name__}, detail={exc}"
+                )
+                continue
+
+            if not video_file:
+                continue
+
+            logger.info(
+                f"Wikimedia image rendered for {search_term!r}: {video_file}"
+            )
+
+            video_paths.append(video_file)
+
+            try:
+                material_sources.append(
+                    _material_source_record(item, video_file)
+                )
+            except Exception as source_error:
+                logger.warning(
+                    "failed to save Wikimedia material metadata: "
+                    f"error={type(source_error).__name__}, detail={source_error}"
+                )
+
+            total_duration += max_clip_duration
+
+            if total_duration >= audio_duration:
+                break
+
+        if not has_candidate:
+            break
+
+        candidate_index += 1
+
+    logger.success(
+        f"downloaded and rendered {len(video_paths)} Wikimedia image clips"
+    )
+    _persist_material_sources(task_id, material_sources)
+    return video_paths
+
+
 def search_videos_pexels(
     search_term: str,
     minimum_duration: int,
@@ -1720,6 +2024,16 @@ def download_videos(
         material_directory = utils.task_dir(task_id)
     elif material_directory and not os.path.isdir(material_directory):
         material_directory = ""
+
+    if source == "wikimedia":
+        return _download_images_wikimedia_by_script_order(
+            task_id=task_id,
+            search_terms=search_terms,
+            video_aspect=video_aspect,
+            audio_duration=audio_duration,
+            max_clip_duration=max_clip_duration,
+            material_directory=material_directory,
+        )
 
     if source == "wavespeed":
         # AI 生成按条计费，不能沿用库存源"先为全部关键词取回候选、再挑选"
