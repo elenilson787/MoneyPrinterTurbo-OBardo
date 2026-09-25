@@ -26,7 +26,7 @@ from moviepy import (
     afx,
 )
 from moviepy.video.tools.subtitles import SubtitlesClip
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 
 from app.config import config
 from app.models import const
@@ -1528,6 +1528,128 @@ def generate_video(
             fps=fps,
         )
         return bgm_mix_succeeded
+
+
+
+def _historical_target_size(video_aspect: VideoAspect) -> tuple[int, int]:
+    aspect_value = getattr(video_aspect, "value", str(video_aspect))
+
+    if aspect_value in ("16:9", "landscape"):
+        return (1920, 1080)
+    if aspect_value in ("1:1", "square"):
+        return (1080, 1080)
+
+    return (1080, 1920)
+
+
+def _resize_cover_pil(image: Image.Image, target_w: int, target_h: int) -> Image.Image:
+    src_w, src_h = image.size
+    if src_w <= 0 or src_h <= 0:
+        raise ValueError("invalid image size")
+
+    scale = max(target_w / src_w, target_h / src_h)
+    new_w = max(1, int(src_w * scale))
+    new_h = max(1, int(src_h * scale))
+
+    resized = image.resize((new_w, new_h), Image.LANCZOS)
+
+    left = max(0, (new_w - target_w) // 2)
+    top = max(0, (new_h - target_h) // 2)
+
+    return resized.crop((left, top, left + target_w, top + target_h))
+
+
+def _resize_contain_pil(image: Image.Image, max_w: int, max_h: int) -> Image.Image:
+    contained = image.copy()
+    contained.thumbnail((max_w, max_h), Image.LANCZOS)
+    return contained
+
+
+def _build_historical_canvas(
+    image_path: str,
+    video_aspect: VideoAspect = VideoAspect.portrait,
+) -> str:
+    target_w, target_h = _historical_target_size(video_aspect)
+
+    src = Image.open(image_path).convert("RGB")
+
+    bg = _resize_cover_pil(src, target_w, target_h)
+    bg = bg.filter(ImageFilter.GaussianBlur(radius=28))
+    bg = ImageEnhance.Brightness(bg).enhance(0.55)
+
+    if target_h > target_w:
+        fg_max_w = int(target_w * 0.92)
+        fg_max_h = int(target_h * 0.78)
+    else:
+        fg_max_w = int(target_w * 0.88)
+        fg_max_h = int(target_h * 0.88)
+
+    fg = _resize_contain_pil(src, fg_max_w, fg_max_h)
+
+    canvas = bg.copy()
+
+    shadow = Image.new("RGBA", (fg.width + 24, fg.height + 24), (0, 0, 0, 0))
+    shadow_core = Image.new("RGBA", (fg.width, fg.height), (0, 0, 0, 90))
+    shadow.paste(shadow_core, (12, 12))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=10))
+
+    canvas_rgba = canvas.convert("RGBA")
+    fg_rgba = fg.convert("RGBA")
+
+    x = (target_w - fg.width) // 2
+    y = (target_h - fg.height) // 2
+
+    canvas_rgba.alpha_composite(shadow, (x - 12, y - 12))
+    canvas_rgba.alpha_composite(fg_rgba, (x, y))
+
+    out_path = f"{image_path}.{target_w}x{target_h}.historical.jpg"
+    canvas_rgba.convert("RGB").save(out_path, format="JPEG", quality=92)
+
+    return out_path
+
+
+def render_historical_image_video(
+    image_path: str,
+    duration: int = 5,
+    video_aspect: VideoAspect = VideoAspect.portrait,
+) -> str:
+    """
+    Render a historical image into a video clip while preserving the full subject.
+    Intended for museum artifacts, manuscripts, paintings, maps and archival images.
+    """
+    duration = max(int(duration), 1)
+
+    canvas_path = _build_historical_canvas(
+        image_path=image_path,
+        video_aspect=video_aspect,
+    )
+
+    output_file = f"{canvas_path}.mp4"
+
+    if os.path.exists(output_file) and os.path.getsize(output_file) > 0:
+        return output_file
+
+    logger.info(
+        f"rendering historical image video: image={image_path}, "
+        f"aspect={getattr(video_aspect, 'value', video_aspect)}, duration={duration}"
+    )
+
+    clip = (
+        ImageClip(canvas_path)
+        .with_duration(duration)
+        .with_position("center")
+    )
+
+    clip.write_videofile(
+        output_file,
+        fps=30,
+        codec="libx264",
+        audio=False,
+        logger=None,
+    )
+
+    return output_file
+
 
 
 def render_image_zoom_video(image_path: str, clip_duration: int = 5) -> str:

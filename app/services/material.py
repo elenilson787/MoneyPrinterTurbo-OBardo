@@ -566,9 +566,10 @@ def _download_images_wikimedia_by_script_order(
                 continue
 
             try:
-                video_file = video.render_image_zoom_video(
+                video_file = video.render_historical_image_video(
                     image_path,
                     max_clip_duration,
+                    video_aspect=video_aspect,
                 )
             except Exception as exc:
                 logger.error(
