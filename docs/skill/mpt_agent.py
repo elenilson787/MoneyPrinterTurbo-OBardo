@@ -37,6 +37,9 @@ SUPPORTED_SOURCES = {
     # Keep this list aligned with ``_CLI_VIDEO_SOURCES`` in cli.py. A source that
     # the CLI accepts must not be rejected here as unsupported.
     "openai_image",
+    "wikimedia",
+    "obardo_hybrid",
+    "obardo_resolver",
     "local",
 }
 VOLCENGINE_ARK_API_KEY_URL = (

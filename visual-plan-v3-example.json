@@ -1,0 +1,204 @@
+﻿{
+  "visual_intent": "Show Roman soldiers ascending a hill during a military campaign, emphasizing movement, terrain and historically plausible Roman military equipment.",
+  "subject": [
+    "soldiers"
+  ],
+  "subject_identity": [
+    "Roman legionaries"
+  ],
+  "action": [
+    "climbing a hill",
+    "marching uphill",
+    "ascending rough terrain"
+  ],
+  "environment": [
+    "hill slope",
+    "rocky terrain",
+    "open countryside",
+    "elevated terrain"
+  ],
+  "location": [
+    "Roman military campaign route"
+  ],
+  "location_context": [
+    "outdoor military route",
+    "approach to elevated terrain",
+    "hill slope overlooking surrounding territory"
+  ],
+  "time_period": {
+    "era": "Ancient Rome",
+    "approximate_period": "Roman Imperial period",
+    "specificity": "medium"
+  },
+  "required_elements": [
+    "Roman soldiers",
+    "uphill movement",
+    "sloped terrain"
+  ],
+  "preferred_elements": [
+    "Roman shields",
+    "Roman helmets",
+    "Roman armor",
+    "spears or pila",
+    "military packs",
+    "rough natural terrain"
+  ],
+  "forbidden_elements": [
+    "modern military equipment",
+    "firearms",
+    "modern uniforms",
+    "medieval knights",
+    "fantasy armor",
+    "modern buildings",
+    "vehicles"
+  ],
+  "anachronism_risks": [
+    "modern military clothing",
+    "medieval armor",
+    "fantasy equipment",
+    "modern weapons",
+    "modern infrastructure"
+  ],
+  "historical_specificity": "high",
+  "scene_type": "human_action",
+  "action_priority": "high",
+  "human_action_required": true,
+  "specific_object_required": false,
+  "object_focus": [
+    "Roman shields",
+    "Roman helmets",
+    "military packs"
+  ],
+  "ideal_media_types": [
+    "Roman reenactment video",
+    "Roman reenactment photography",
+    "historical painting of Roman soldiers marching",
+    "historical illustration of Roman military movement",
+    "museum reconstruction with Roman legionaries"
+  ],
+  "asset_priority": [
+    "reenactment video",
+    "reenactment photograph",
+    "historical painting",
+    "historical illustration",
+    "museum reconstruction"
+  ],
+  "recommended_shots": [
+    {
+      "shot_type": "wide shot",
+      "description": "A group of Roman soldiers ascending a hill or rough slope.",
+      "priority": "high"
+    },
+    {
+      "shot_type": "medium shot",
+      "description": "Roman legionaries marching uphill with shields, helmets and equipment visible.",
+      "priority": "high"
+    },
+    {
+      "shot_type": "detail shot",
+      "description": "Close view of shields, armor, boots or military packs while soldiers move uphill.",
+      "priority": "medium"
+    }
+  ],
+  "camera_mood": [
+    "determined movement",
+    "military progression",
+    "physical effort",
+    "campaign atmosphere"
+  ],
+  "motion_cues": [
+    "upward movement",
+    "marching",
+    "boots moving over rough ground",
+    "group progression"
+  ],
+  "visual_validation_focus": [
+    "Roman military appearance",
+    "presence of Roman-style shields or armor",
+    "absence of modern objects",
+    "absence of medieval or fantasy equipment",
+    "visible uphill or sloped terrain",
+    "credible group military movement"
+  ],
+  "visual_validation_rules": {
+    "must_show_human_action": true,
+    "must_show_roman_context": true,
+    "must_show_uphill_or_sloped_terrain": true,
+    "reject_if_modern_equipment": true,
+    "reject_if_medieval_or_fantasy": true,
+    "reject_if_no_visible_military_context": false
+  },
+  "queries": [
+    "Roman legionaries marching uphill reenactment",
+    "Roman soldiers climbing hill reenactment",
+    "Roman army marching on rough terrain",
+    "Roman legion marching uphill",
+    "Roman soldiers on hillside reenactment",
+    "Roman military campaign marching terrain"
+  ],
+  "media_specific_queries": {
+    "video": [
+      "Roman legion reenactment marching uphill",
+      "Roman soldiers reenactment rough terrain",
+      "Roman army reenactment marching outdoors"
+    ],
+    "photo": [
+      "Roman legionaries reenactment hill",
+      "Roman soldiers reenactment countryside",
+      "Roman army reenactment rough terrain"
+    ],
+    "historical_art": [
+      "Roman army marching painting",
+      "Roman legion campaign painting",
+      "Roman soldiers marching historical illustration"
+    ],
+    "museum": [
+      "Roman legionary reconstruction museum",
+      "Roman soldier reconstruction armor",
+      "Roman military equipment reconstruction"
+    ]
+  },
+  "fallback_queries": [
+    "Roman legion marching",
+    "Roman soldiers outdoors",
+    "Roman army on rough terrain",
+    "Roman soldiers military campaign"
+  ],
+  "semantic_fallback_queries": [
+    "ancient Roman military march",
+    "Roman legionaries in formation outdoors",
+    "Roman soldiers advancing through countryside"
+  ],
+  "search_concepts": [
+    "Roman military campaign",
+    "Roman legion march",
+    "Roman soldiers ascending terrain",
+    "Roman legionaries on campaign",
+    "Roman military movement"
+  ],
+  "search_strategy": {
+    "literal_action_first": true,
+    "historical_identity_second": true,
+    "semantic_context_fallback": true,
+    "prefer_reenactment_for_human_action": true,
+    "prefer_historical_art_when_no_realistic_media": true
+  },
+  "candidate_scoring_weights": {
+    "historical_identity": 0.25,
+    "action_match": 0.25,
+    "terrain_match": 0.15,
+    "equipment_accuracy": 0.15,
+    "absence_of_anachronism": 0.15,
+    "visual_quality": 0.05
+  },
+  "minimum_candidate_score": 0.65,
+  "confidence": 0.93,
+  "reasoning_summary": "The narration explicitly describes soldiers ascending a hill. Previous and next context establishes a military campaign and observation from elevated terrain.",
+  "beat_index": 2,
+  "beat_text": "E os soldados subiram a colina.",
+  "previous_text": "Após atravessar o vale, os soldados chegaram ao pé de uma elevação.",
+  "next_text": "Do topo, observaram o território e o acampamento inimigo.",
+  "director_version": "3.0.0",
+  "director_source": "ollama",
+  "director_model": "qwen2.5-coder:7b"
+}

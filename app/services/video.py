@@ -755,6 +755,7 @@ def combine_videos(
     source_usage: dict[str, int] | None = None,
     source_groups: dict[str, str] | None = None,
     used_video_paths: List[str] | None = None,
+    exact_timeline_mode: bool = False,
 ) -> str:
     audio_clip = AudioFileClip(audio_file)
     try:
@@ -770,6 +771,64 @@ def combine_videos(
         f"required video duration: {required_video_duration:.2f} seconds "
         f"(audio duration + {_VIDEO_DURATION_SAFETY_MARGIN:.2f}s safety margin)"
     )
+
+    # ---------------------------------------------------------
+    # O BARDO EXACT EDITORIAL TIMELINE
+    #
+    # obardo_resolver already returns one finished clip for
+    # every narration beat, in the exact editorial order and
+    # with the intended beat duration.
+    #
+    # Do NOT:
+    # - split those clips again;
+    # - shuffle them;
+    # - impose max_clip_duration;
+    # - loop them to satisfy the generic safety margin.
+    #
+    # Concatenate the finished beat clips directly and trim the
+    # final output to the narration duration.
+    # ---------------------------------------------------------
+    if exact_timeline_mode:
+        if not video_paths:
+            raise RuntimeError(
+                "Exact timeline mode received no video paths."
+            )
+
+        logger.info(
+            "exact timeline mode: concatenating "
+            f"{len(video_paths)} resolved editorial beats "
+            "without re-splitting or looping"
+        )
+
+        for item in video_paths:
+            if not os.path.isfile(item):
+                raise RuntimeError(
+                    "Exact timeline clip does not exist: "
+                    + str(item)
+                )
+
+        output_dir = os.path.dirname(
+            combined_video_path
+        )
+
+        concat_video_clips_with_ffmpeg(
+            clip_files=list(video_paths),
+            output_file=combined_video_path,
+            threads=threads,
+            output_dir=output_dir,
+            max_duration=audio_duration,
+        )
+
+        if used_video_paths is not None:
+            used_video_paths.extend(
+                list(video_paths)
+            )
+
+        logger.info(
+            "exact timeline mode: video combining completed"
+        )
+
+        return combined_video_path
 
     # 兼容 API 直接调用时未传转场模式的情况，避免后续访问 .value 时崩溃。
     transition_value = getattr(video_transition_mode, "value", video_transition_mode)
@@ -1608,48 +1667,534 @@ def _build_historical_canvas(
     return out_path
 
 
+
+
+def render_editorial_video_chunks(
+    video_path: str,
+    total_duration: float,
+    max_chunk_duration: float = 3.0,
+) -> list[str]:
+    """
+    Cut one contextual stock video into consecutive O Bardo editorial chunks.
+
+    The chunks together cover exactly total_duration while each individual file
+    stays at or below max_chunk_duration, allowing the existing compositor to
+    remain unchanged.
+    """
+    try:
+        total_duration = float(total_duration)
+        max_chunk_duration = float(max_chunk_duration)
+    except (TypeError, ValueError, OverflowError):
+        return []
+
+    if total_duration <= 0 or max_chunk_duration <= 0:
+        return []
+
+    source = _open_video_clip_quietly(video_path)
+    outputs = []
+
+    try:
+        available_duration = float(source.duration or 0.0)
+
+        if available_duration <= 0:
+            return []
+
+        target_duration = min(total_duration, available_duration)
+
+        start = 0.0
+        chunk_index = 1
+
+        while start < target_duration - 0.001:
+            duration = min(
+                max_chunk_duration,
+                target_duration - start,
+            )
+
+            end = min(start + duration, available_duration)
+
+            if end <= start:
+                break
+
+            start_tag = f"{start:.3f}".rstrip("0").rstrip(".").replace(".", "p")
+            duration_tag = (
+                f"{(end-start):.3f}"
+                .rstrip("0")
+                .rstrip(".")
+                .replace(".", "p")
+            )
+
+            output_file = (
+                f"{video_path}.obardo-"
+                f"{chunk_index:02d}-{start_tag}s-{duration_tag}s.mp4"
+            )
+
+            if os.path.exists(output_file) and os.path.getsize(output_file) > 0:
+                outputs.append(output_file)
+                start = end
+                chunk_index += 1
+                continue
+
+            clip = source.subclipped(start, end)
+
+            try:
+                clip.write_videofile(
+                    output_file,
+                    fps=30,
+                    codec="libx264",
+                    audio=False,
+                    logger=None,
+                )
+            finally:
+                close_clip(clip)
+
+            outputs.append(output_file)
+
+            start = end
+            chunk_index += 1
+
+        logger.info(
+            f"O Bardo editorial video chunks: source={video_path}, "
+            f"requested={total_duration:.3f}s, "
+            f"prepared={sum(min(max_chunk_duration, max(target_duration - i * max_chunk_duration, 0)) for i in range(len(outputs))):.3f}s, "
+            f"chunks={len(outputs)}"
+        )
+
+        return outputs
+
+    finally:
+        close_clip(source)
+
+
 def render_historical_image_video(
     image_path: str,
-    duration: int = 5,
+    duration: float = 5.0,
     video_aspect: VideoAspect = VideoAspect.portrait,
 ) -> str:
     """
-    Render a historical image into a video clip while preserving the full subject.
-    Intended for museum artifacts, manuscripts, paintings, maps and archival images.
+    Render a historical image while preserving the full subject.
+
+    The requested duration is part of the cache key because O Bardo editorial
+    timelines may reuse the same historical image for beats with different lengths.
     """
-    duration = max(int(duration), 1)
+    try:
+        duration = float(duration)
+    except (TypeError, ValueError, OverflowError):
+        duration = 5.0
+
+    duration = max(duration, 0.1)
 
     canvas_path = _build_historical_canvas(
         image_path=image_path,
         video_aspect=video_aspect,
     )
 
-    output_file = f"{canvas_path}.mp4"
+    duration_tag = f"{duration:.3f}".rstrip("0").rstrip(".").replace(".", "p")
+    # motion-v1 invalidates historical clips rendered before the
+    # O Bardo historical-image motion pass was introduced.
+    output_file = f"{canvas_path}.{duration_tag}s.motion-v2.mp4"
 
     if os.path.exists(output_file) and os.path.getsize(output_file) > 0:
         return output_file
 
     logger.info(
         f"rendering historical image video: image={image_path}, "
-        f"aspect={getattr(video_aspect, 'value', video_aspect)}, duration={duration}"
+        f"aspect={getattr(video_aspect, 'value', video_aspect)}, "
+        f"duration={duration:.3f}s"
     )
 
-    clip = (
-        ImageClip(canvas_path)
-        .with_duration(duration)
-        .with_position("center")
+    base_clip = ImageClip(canvas_path).with_duration(duration)
+
+    # O Bardo historical motion v2.
+    #
+    # Historical stills are support material. Whenever a good contextual
+    # or historical video exists, the resolver should prefer video.
+    #
+    # For still images, keep motion restrained and documentary-like:
+    # approximately 5% total zoom with optional subtle horizontal pan.
+    max_zoom = 1.05
+    canvas_width, canvas_height = base_clip.size
+
+    motion_seed = sum(ord(char) for char in os.path.basename(canvas_path)) % 4
+
+    def historical_progress(t):
+        if duration <= 0:
+            return 0.0
+
+        progress = max(0.0, min(float(t) / duration, 1.0))
+
+        # Smoothstep avoids abrupt starts and stops.
+        return progress * progress * (3.0 - 2.0 * progress)
+
+    def historical_zoom(t):
+        progress = historical_progress(t)
+
+        # Alternate between zoom-in and zoom-out.
+        if motion_seed == 1:
+            return max_zoom - ((max_zoom - 1.0) * progress)
+
+        return 1.0 + ((max_zoom - 1.0) * progress)
+
+    zoom_clip = base_clip.resized(historical_zoom)
+
+    def historical_position(t):
+        progress = historical_progress(t)
+
+        # The image is slightly oversized by the zoom. The offset below
+        # remains intentionally small to avoid visible shaking or cropping.
+        max_pan_x = canvas_width * 0.018
+
+        if motion_seed == 2:
+            x = -max_pan_x + (2.0 * max_pan_x * progress)
+            return (x, "center")
+
+        if motion_seed == 3:
+            x = max_pan_x - (2.0 * max_pan_x * progress)
+            return (x, "center")
+
+        return ("center", "center")
+
+    zoom_clip = zoom_clip.with_position(historical_position)
+
+    final_clip = CompositeVideoClip(
+        [zoom_clip],
+        size=(canvas_width, canvas_height),
+    ).with_duration(duration)
+
+    try:
+        final_clip.write_videofile(
+            output_file,
+            fps=30,
+            codec="libx264",
+            audio=False,
+            logger=None,
+        )
+        return output_file
+    finally:
+        close_clip(final_clip)
+        close_clip(zoom_clip)
+        close_clip(base_clip)
+
+
+
+
+def render_historical_artifact_overlay(
+    background_video_path: str,
+    artifact_image_path: str,
+    duration: float,
+    video_aspect: VideoAspect = VideoAspect.landscape,
+    output_file: str | None = None,
+) -> str:
+    """
+    Compose an O Bardo contextual video with a historically specific artifact.
+
+    Editorial intent:
+        good video remains the primary visual;
+        the historical image acts only as a supporting artifact overlay.
+
+    The artifact:
+        - enters shortly after the beginning of the beat;
+        - stays visible for most of the beat;
+        - uses restrained documentary motion;
+        - never replaces the contextual background video.
+    """
+    try:
+        duration = max(float(duration), 0.1)
+    except (TypeError, ValueError, OverflowError):
+        duration = 4.0
+
+    target_width, target_height = _historical_target_size(
+        video_aspect
     )
 
-    clip.write_videofile(
-        output_file,
-        fps=30,
-        codec="libx264",
+    if output_file is None:
+        background_root = os.path.splitext(
+            background_video_path
+        )[0]
+
+        artifact_tag = os.path.splitext(
+            os.path.basename(artifact_image_path)
+        )[0][:32]
+
+        duration_tag = (
+            f"{duration:.3f}"
+            .rstrip("0")
+            .rstrip(".")
+            .replace(".", "p")
+        )
+
+        output_file = (
+            f"{background_root}."
+            f"artifact-{artifact_tag}."
+            f"{duration_tag}s.mp4"
+        )
+
+    if (
+        os.path.isfile(output_file)
+        and os.path.getsize(output_file) > 0
+    ):
+        return output_file
+
+    background_source = _open_video_clip_quietly(
+        background_video_path,
         audio=False,
-        logger=None,
     )
 
-    return output_file
+    background_clip = None
+    artifact_clip = None
+    final_clip = None
 
+    try:
+        available_duration = float(
+            background_source.duration or 0.0
+        )
+
+        if available_duration <= 0:
+            raise RuntimeError(
+                "artifact overlay background has no duration"
+            )
+
+        final_duration = min(
+            duration,
+            available_duration,
+        )
+
+        background_clip = (
+            background_source
+            .subclipped(
+                0,
+                final_duration,
+            )
+        )
+
+        background_clip = _fit_clip_to_canvas(
+            background_clip,
+            target_width=target_width,
+            target_height=target_height,
+            fit_mode=VideoFitMode.cover,
+        )
+
+        # -----------------------------------------------------
+        # Build the artifact card with Pillow.
+        #
+        # We deliberately show the complete historical image
+        # rather than cropping it aggressively. This is especially
+        # important for objects such as strigils, coins, maps,
+        # manuscripts and archaeological finds.
+        # -----------------------------------------------------
+        with Image.open(artifact_image_path) as source_image:
+            artifact_source = source_image.convert("RGB")
+
+            if target_width > target_height:
+                max_card_width = int(target_width * 0.34)
+                max_card_height = int(target_height * 0.68)
+            else:
+                max_card_width = int(target_width * 0.70)
+                max_card_height = int(target_height * 0.38)
+
+            artifact = _resize_contain_pil(
+                artifact_source,
+                max_card_width,
+                max_card_height,
+            )
+
+        border = max(
+            8,
+            int(min(target_width, target_height) * 0.010),
+        )
+
+        shadow = max(
+            12,
+            int(min(target_width, target_height) * 0.018),
+        )
+
+        card_width = artifact.width + (border * 2)
+        card_height = artifact.height + (border * 2)
+
+        card = Image.new(
+            "RGBA",
+            (
+                card_width + shadow * 2,
+                card_height + shadow * 2,
+            ),
+            (0, 0, 0, 0),
+        )
+
+        shadow_layer = Image.new(
+            "RGBA",
+            card.size,
+            (0, 0, 0, 0),
+        )
+
+        shadow_draw = ImageDraw.Draw(shadow_layer)
+
+        shadow_draw.rounded_rectangle(
+            (
+                shadow,
+                shadow,
+                shadow + card_width,
+                shadow + card_height,
+            ),
+            radius=max(12, border),
+            fill=(0, 0, 0, 150),
+        )
+
+        shadow_layer = shadow_layer.filter(
+            ImageFilter.GaussianBlur(
+                radius=max(6, border)
+            )
+        )
+
+        card.alpha_composite(shadow_layer)
+
+        plate = Image.new(
+            "RGBA",
+            (card_width, card_height),
+            (238, 234, 222, 245),
+        )
+
+        plate_x = shadow
+        plate_y = shadow
+
+        card.alpha_composite(
+            plate,
+            (plate_x, plate_y),
+        )
+
+        artifact_rgba = artifact.convert("RGBA")
+
+        card.alpha_composite(
+            artifact_rgba,
+            (
+                plate_x + border,
+                plate_y + border,
+            ),
+        )
+
+        artifact_clip = (
+            ImageClip(
+                np.array(card),
+                transparent=True,
+            )
+            .with_duration(final_duration)
+        )
+
+        # Mild scale movement: 96% -> 100%.
+        def artifact_scale(t):
+            entrance = min(
+                max(float(t) / 0.40, 0.0),
+                1.0,
+            )
+
+            entrance = (
+                entrance
+                * entrance
+                * (3.0 - 2.0 * entrance)
+            )
+
+            return 0.96 + (0.04 * entrance)
+
+        artifact_clip = artifact_clip.resized(
+            artifact_scale
+        )
+
+        # Slide in from the right.
+        def artifact_position(t):
+            entrance_duration = min(
+                0.40,
+                final_duration * 0.25,
+            )
+
+            if entrance_duration <= 0:
+                progress = 1.0
+            else:
+                progress = min(
+                    max(float(t) / entrance_duration, 0.0),
+                    1.0,
+                )
+
+            progress = (
+                progress
+                * progress
+                * (3.0 - 2.0 * progress)
+            )
+
+            margin_x = int(target_width * 0.055)
+
+            final_x = (
+                target_width
+                - artifact_clip.w
+                - margin_x
+            )
+
+            # Keep the card inside the canvas for the entire animation.
+            #
+            # MoviePy 2.x can fail while composing a transparent mask if
+            # the clip starts completely outside the frame and therefore
+            # has a zero-width intersection. Instead of entering from
+            # off-screen, start slightly to the right and glide into the
+            # final position.
+            slide_distance = int(target_width * 0.055)
+
+            start_x = min(
+                target_width - artifact_clip.w,
+                final_x + slide_distance,
+            )
+
+            x = (
+                start_x
+                + ((final_x - start_x) * progress)
+            )
+
+            y = (
+                target_height
+                - artifact_clip.h
+            ) / 2
+
+            return (x, y)
+
+        artifact_clip = artifact_clip.with_position(
+            artifact_position
+        )
+
+        final_clip = CompositeVideoClip(
+            [
+                background_clip,
+                artifact_clip,
+            ],
+            size=(
+                target_width,
+                target_height,
+            ),
+        ).with_duration(final_duration)
+
+        logger.info(
+            "rendering historical artifact overlay: "
+            f"background={background_video_path}, "
+            f"artifact={artifact_image_path}, "
+            f"duration={final_duration:.3f}s"
+        )
+
+        final_clip.write_videofile(
+            output_file,
+            fps=30,
+            codec="libx264",
+            audio=False,
+            logger=None,
+        )
+
+        return output_file
+
+    finally:
+        if final_clip is not None:
+            close_clip(final_clip)
+
+        if artifact_clip is not None:
+            close_clip(artifact_clip)
+
+        if background_clip is not None:
+            close_clip(background_clip)
+
+        close_clip(background_source)
 
 
 def render_image_zoom_video(image_path: str, clip_duration: int = 5) -> str:

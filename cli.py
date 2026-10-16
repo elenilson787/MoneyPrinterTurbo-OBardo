@@ -42,6 +42,8 @@ _CLI_VIDEO_SOURCES = (
     "pixabay",
     "coverr",
     "wikimedia",
+    "obardo_hybrid",
+    "obardo_resolver",
     "wavespeed",
     "volcengine_seedance",
     "ofox",

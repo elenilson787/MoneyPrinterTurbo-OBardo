@@ -1,0 +1,2529 @@
+{
+  "schema_version": "obardo_visual_plan_v3",
+  "project": {
+    "title": "Quando a medicina tentou “curar” a homossexualidade",
+    "channel": "O Bardo",
+    "language": "pt-BR",
+    "format": "historical_documentary",
+    "aspect_ratio": "16:9",
+    "target_platform": "YouTube",
+    "script_locked": true
+  },
+  "audio": {
+    "provider": "elevenlabs",
+    "generate_audio": true,
+    "voice_name": "elevenlabs:liAlPCvGDJ0qsfPupueo:Paulo Becker - Strong and Sentimental",
+    "model_id": "eleven_v4",
+    "fallback_provider": null,
+    "notes": "Toda a narração deve ser gerada pelo ElevenLabs. Não usar TTS local ou Edge neste projeto."
+  },
+  "editorial_policy": {
+    "tone": "serious_historical_documentary",
+    "avoid_sensationalism": true,
+    "avoid_graphic_depictions": true,
+    "do_not_pathologize_homosexuality": true,
+    "historical_context_required": true,
+    "historical_media_first": true,
+    "preferred_media": [
+      "historical archive video",
+      "archival photography",
+      "historical documents",
+      "book/manual scans",
+      "newspaper archives",
+      "institutional archives",
+      "museum collections",
+      "period illustrations"
+    ],
+    "fallback_media": [
+      "period-accurate reconstruction",
+      "neutral contextual footage"
+    ],
+    "avoid_media": [
+      "generic modern hospital stock footage",
+      "unrelated ECT footage used for aversion therapy",
+      "modern conversion-therapy imagery presented as historical",
+      "AI-looking faces/hands when archival alternatives exist",
+      "graphic medical procedure imagery",
+      "sensationalized LGBTQ imagery unrelated to historical context"
+    ],
+    "critical_historical_rule": "Electroconvulsive therapy (ECT) and behavioral aversion therapy with electric shocks are distinct practices. Never visually substitute one for the other."
+  },
+  "search_defaults": {
+    "primary_language": "en",
+    "secondary_language": "pt",
+    "historical_media_required": true,
+    "prefer_video_when_available": true,
+    "allow_photos": true,
+    "allow_documents": true,
+    "allow_newspaper_scans": true,
+    "allow_museum_images": true,
+    "allow_institutional_archives": true,
+    "allow_period_illustrations": true,
+    "allow_reenactment": true,
+    "reenactment_priority": "last_resort",
+    "generic_stock_priority": "avoid",
+    "search_specificity": "high",
+    "require_period_match": true,
+    "require_semantic_match": true
+  },
+  "full_script": "Durante décadas, entrar em um consultório médico e dizer que sentia atração por alguém do mesmo sexo podia significar muito mais do que uma conversa.\nEm alguns hospitais, pacientes eram submetidos a sessões de terapia destinadas a eliminar aquilo que médicos consideravam um comportamento indesejado.\nFotografias eram colocadas diante deles.\nEletrodos podiam ser presos ao corpo.\nQuando determinadas imagens apareciam, vinha o choque.\nA esperança era simples e perturbadora: fazer o cérebro associar o desejo ao medo, à dor ou à repulsa.\nHoje, a homossexualidade não é considerada uma doença mental.\nMas durante boa parte do século XX, algumas das principais instituições médicas do mundo pensavam de maneira diferente.\nE essa mudança não aconteceu de uma hora para outra.\nDurante décadas, médicos, psiquiatras e psicólogos tentaram responder a uma pergunta que atualmente parece começar de uma premissa errada:\ncomo “curar” a homossexualidade?\nPara entender como a medicina chegou a esse ponto, precisamos voltar ao final do século XIX.\nNaquele período, a psiquiatria ainda era uma disciplina relativamente jovem.\nHospitais psiquiátricos cresciam pela Europa.\nMédicos catalogavam comportamentos.\nLivros tentavam estabelecer fronteiras entre aquilo que seria considerado normal e aquilo que seria classificado como doença.\nFoi nesse ambiente que a sexualidade também começou a ser transformada em objeto de diagnóstico.\nComportamentos que durante séculos haviam sido discutidos principalmente em termos religiosos, jurídicos ou morais passaram a receber também uma interpretação médica.\nA mudança parecia pequena.\nMas tinha consequências profundas.\nSe uma característica humana era considerada uma doença, então ela poderia, ao menos teoricamente, ser tratada.\nE foi exatamente isso que muitos passaram a tentar.\nNo início do século XX, não existia um único método.\nAlguns médicos apostavam na psicanálise.\nOutros procuravam explicações hormonais.\nAlguns investigavam o cérebro.\nE havia aqueles que acreditavam que o comportamento sexual poderia ser condicionado.\nMas uma transformação decisiva ocorreu quando esses conceitos começaram a aparecer nos grandes manuais de psiquiatria.\nEm 1952, a Associação Americana de Psiquiatria publicou a primeira edição do Diagnostic and Statistical Manual of Mental Disorders, o DSM.\nNaquele manual, a homossexualidade aparecia dentro das classificações psiquiátricas da época.\nEm 1968, o DSM-II ainda a mantinha como um transtorno.\nUm diagnóstico impresso em um manual não ficava restrito às páginas de um livro.\nEle entrava nos hospitais.\nNos consultórios.\nNas universidades.\nE ajudava a determinar o tipo de tratamento que uma pessoa poderia receber.\nFoi nesse contexto que ganharam espaço as chamadas terapias de aversão.\nA ideia vinha do behaviorismo.\nSe determinado comportamento pudesse ser associado a uma experiência desagradável, talvez o indivíduo aprendesse a evitá-lo.\nNa prática, isso produziu algumas das páginas mais controversas da história da psiquiatria.\nNa Grã-Bretanha, principalmente durante as décadas de 1960 e 1970, homens homossexuais foram submetidos a tratamentos de aversão em hospitais.\nUm dos métodos utilizava choques elétricos.\nO paciente observava fotografias de homens e mulheres.\nQuando determinadas imagens eram apresentadas, recebia um estímulo elétrico desagradável.\nA intenção era enfraquecer a atração por pessoas do mesmo sexo e reforçar a atração pelo sexo oposto.\nMas os choques não eram o único método.\nEm alguns casos, substâncias que provocavam náuseas eram utilizadas.\nO princípio era semelhante.\nDesejo.\nImagem.\nNáusea.\nRepulsa.\nRepetição.\nAlguns pacientes permaneceram submetidos a esses procedimentos durante semanas.\nOutros passaram por tratamentos por períodos ainda maiores.\nTambém foram empregados diferentes métodos em lugares e períodos distintos: psicanálise, hipnose, medicamentos destinados a reduzir a libido e outras formas de intervenção psicológica.\nÉ importante fazer aqui uma distinção.\nA eletroconvulsoterapia, conhecida popularmente como eletrochoque, é um procedimento médico desenvolvido no final da década de 1930 e que ainda possui aplicações específicas na psiquiatria moderna.\nEla não é a mesma coisa que a terapia comportamental de aversão com choques utilizada historicamente para tentar modificar a orientação sexual.\nMisturar as duas práticas cria uma imagem historicamente incorreta.\nMas havia algo em comum entre muitas dessas tentativas.\nTodas partiam da ideia de que a orientação homossexual era um problema que deveria ser alterado.\nE essa ideia começou a ser cada vez mais questionada.\nEnquanto alguns médicos procuravam maneiras de mudar a orientação sexual, outros pesquisadores começaram a perguntar algo diferente:\ne se não houvesse uma doença para tratar?\nA mudança científica começou lentamente.\nPesquisas passaram a questionar a associação automática entre homossexualidade e transtorno psicológico.\nAo mesmo tempo, homens e mulheres homossexuais começaram a contestar publicamente as instituições que os classificavam como doentes.\nEssa disputa chegou diretamente à psiquiatria americana.\nEm 1972, durante um encontro da Associação Americana de Psiquiatria, uma figura apareceu diante do público usando uma máscara.\nEra um psiquiatra.\nPara proteger sua identidade, apresentou-se como “Dr. H. Anonymous”.\nSeu verdadeiro nome era John Fryer.\nEle era homossexual.\nE sabia que admitir isso publicamente poderia destruir sua carreira.\nDiante de outros psiquiatras, Fryer falou sobre uma contradição difícil de ignorar.\nHavia médicos homossexuais trabalhando dentro da própria psiquiatria enquanto a profissão classificava pessoas como eles como portadoras de um transtorno.\nA imagem daquele homem mascarado se tornou um dos símbolos da mudança que estava acontecendo.\nNo ano seguinte, em 1973, a Associação Americana de Psiquiatria retirou a homossexualidade, por si só, da classificação de transtornos mentais do DSM-II.\nMas a história não terminou ali.\nUma categoria relacionada à orientação sexual permaneceu por algum tempo.\nNo DSM-III, publicado em 1980, ainda existia a chamada “homossexualidade egodistônica”, aplicada quando uma pessoa experimentava sofrimento relacionado à própria orientação e desejava mudá-la.\nEssa categoria desapareceria posteriormente.\nEm 1987, ela já não fazia parte dos critérios do DSM-III-R.\nMas havia outra instituição cuja classificação alcançava praticamente todo o planeta.\nA Organização Mundial da Saúde.\nDurante décadas, versões da Classificação Internacional de Doenças também carregaram categorias relacionadas à homossexualidade.\nAté que, em 17 de maio de 1990, a Assembleia Mundial da Saúde aprovou uma revisão que deixava de tratar a homossexualidade como transtorno mental.\nA data se tornaria simbólica.\nDécadas de classificação médica estavam sendo desmontadas.\nMas abandonar um diagnóstico em um manual não apaga imediatamente práticas, instituições e crenças.\nTentativas de mudar a orientação sexual continuaram existindo sob diferentes nomes.\nHoje elas costumam ser agrupadas sob expressões como “terapias de conversão” ou esforços de mudança de orientação sexual.\nA diferença fundamental é que as principais organizações médicas e psiquiátricas contemporâneas não reconhecem a homossexualidade como uma doença.\nTambém não há evidência científica confiável de que essas práticas consigam transformar uma pessoa homossexual em heterossexual.\nPesquisas modernas associam esses esforços a riscos de danos psicológicos, incluindo ansiedade, depressão e outros efeitos negativos.\nTalvez o aspecto mais inquietante dessa história esteja justamente aí.\nMuitos dos profissionais envolvidos nas antigas tentativas de tratamento não acreditavam estar participando de uma perseguição.\nDentro dos conhecimentos, preconceitos e valores de sua época, alguns acreditavam estar praticando medicina.\nE é isso que torna essa história tão importante.\nPorque a medicina não existe fora da sociedade.\nEla é construída por seres humanos.\nSeus diagnósticos mudam.\nSeus manuais mudam.\nSeus tratamentos mudam.\nE aquilo que uma geração pode apresentar como verdade científica pode ser profundamente questionado pela geração seguinte.\nDurante décadas, homens e mulheres entraram em hospitais acreditando que algo fundamental sobre eles precisava ser corrigido.\nAlguns receberam medicamentos.\nOutros passaram anos em terapia.\nAlguns foram submetidos a procedimentos destinados a transformar desejo em medo e repulsa.\nAté que a própria medicina começou a perceber que talvez estivesse tentando curar aquilo que nunca havia sido uma doença.\nA questão, portanto, não é apenas por que a medicina tentou mudar a homossexualidade.\nExiste uma pergunta ainda maior.\nQuantas vezes, ao longo da história, aquilo que uma sociedade considerou diferente acabou sendo transformado em diagnóstico?\nE quantas certezas médicas do nosso próprio tempo serão vistas de maneira completamente diferente no futuro?",
+  "beats": [
+    {
+      "beat_index": 1,
+      "beat_text": "Durante décadas, entrar em um consultório médico e dizer que sentia atração por alguém do mesmo sexo podia significar muito mais do que uma conversa.\nEm alguns hospitais, pacientes eram submetidos a sessões de terapia destinadas a eliminar aquilo que médicos consideravam um comportamento indesejado.",
+      "narration": "Durante décadas, entrar em um consultório médico e dizer que sentia atração por alguém do mesmo sexo podia significar muito mais do que uma conversa.\nEm alguns hospitais, pacientes eram submetidos a sessões de terapia destinadas a eliminar aquilo que médicos consideravam um comportamento indesejado.",
+      "visual_intent": "Show a mid-20th-century psychiatric consultation and institutional treatment context",
+      "subject": [
+        "historical psychiatric patient and doctor"
+      ],
+      "subject_identity": [],
+      "action": [
+        "consultation and institutional treatment"
+      ],
+      "environment": [
+        "psychiatric hospital or medical office"
+      ],
+      "required_elements": [
+        "historical psychiatric patient and doctor"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_archive_video",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "psychiatric consultation 1950s archive",
+        "psychiatric hospital patient doctor 1960s historical footage"
+      ],
+      "fallback_queries": [
+        "psychiatric consultation 1950s archive documentary archive",
+        "psychiatric consultation 1950s archive historical photograph",
+        "psychiatric consultation 1950s archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 2,
+      "beat_text": "Fotografias eram colocadas diante deles.\nEletrodos podiam ser presos ao corpo.\nQuando determinadas imagens apareciam, vinha o choque.\nA esperança era simples e perturbadora: fazer o cérebro associar o desejo ao medo, à dor ou à repulsa.",
+      "narration": "Fotografias eram colocadas diante deles.\nEletrodos podiam ser presos ao corpo.\nQuando determinadas imagens apareciam, vinha o choque.\nA esperança era simples e perturbadora: fazer o cérebro associar o desejo ao medo, à dor ou à repulsa.",
+      "visual_intent": "Show historical aversion-therapy apparatus, photographs and electrodes without graphic depiction",
+      "subject": [
+        "aversion therapy apparatus"
+      ],
+      "subject_identity": [],
+      "action": [
+        "patient viewing photographs with electrodes attached"
+      ],
+      "environment": [
+        "historical clinical treatment room"
+      ],
+      "required_elements": [
+        "aversion therapy apparatus"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_document",
+        "historical_archive_video"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "aversion therapy homosexuality electric shock historical archive",
+        "behavior therapy electrodes photographs 1960s Britain"
+      ],
+      "fallback_queries": [
+        "aversion therapy homosexuality electric shock historical archive documentary archive",
+        "aversion therapy homosexuality electric shock historical archive historical photograph",
+        "aversion therapy homosexuality electric shock historical archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": true,
+      "specific_object_required": false,
+      "action_priority": "high",
+      "scene_type": "human_action",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 3,
+      "beat_text": "Hoje, a homossexualidade não é considerada uma doença mental.\nMas durante boa parte do século XX, algumas das principais instituições médicas do mundo pensavam de maneira diferente.\nE essa mudança não aconteceu de uma hora para outra.\nDurante décadas, médicos, psiquiatras e psicólogos tentaram responder a uma pergunta que atualmente parece começar de uma premissa errada:\ncomo “curar” a homossexualidade?",
+      "narration": "Hoje, a homossexualidade não é considerada uma doença mental.\nMas durante boa parte do século XX, algumas das principais instituições médicas do mundo pensavam de maneira diferente.\nE essa mudança não aconteceu de uma hora para outra.\nDurante décadas, médicos, psiquiatras e psicólogos tentaram responder a uma pergunta que atualmente parece começar de uma premissa errada:\ncomo “curar” a homossexualidade?",
+      "visual_intent": "Contrast current medical understanding with earlier psychiatric classification",
+      "subject": [
+        "psychiatric classification of homosexuality"
+      ],
+      "subject_identity": [],
+      "action": [
+        "classification changing over time"
+      ],
+      "environment": [
+        "medical institutions and manuals"
+      ],
+      "required_elements": [
+        "psychiatric classification of homosexuality"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "archival_photo",
+        "institutional_archive"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "history homosexuality psychiatric diagnosis archive",
+        "APA homosexuality diagnosis historical archive"
+      ],
+      "fallback_queries": [
+        "history homosexuality psychiatric diagnosis archive documentary archive",
+        "history homosexuality psychiatric diagnosis archive historical photograph",
+        "history homosexuality psychiatric diagnosis archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 4,
+      "beat_text": "Para entender como a medicina chegou a esse ponto, precisamos voltar ao final do século XIX.\nNaquele período, a psiquiatria ainda era uma disciplina relativamente jovem.\nHospitais psiquiátricos cresciam pela Europa.\nMédicos catalogavam comportamentos.\nLivros tentavam estabelecer fronteiras entre aquilo que seria considerado normal e aquilo que seria classificado como doença.",
+      "narration": "Para entender como a medicina chegou a esse ponto, precisamos voltar ao final do século XIX.\nNaquele período, a psiquiatria ainda era uma disciplina relativamente jovem.\nHospitais psiquiátricos cresciam pela Europa.\nMédicos catalogavam comportamentos.\nLivros tentavam estabelecer fronteiras entre aquilo que seria considerado normal e aquilo que seria classificado como doença.",
+      "visual_intent": "Establish late nineteenth-century European psychiatry and growing asylums",
+      "subject": [
+        "late 19th century psychiatry"
+      ],
+      "subject_identity": [],
+      "action": [
+        "doctors cataloging patients and behavior"
+      ],
+      "environment": [
+        "European psychiatric asylum"
+      ],
+      "required_elements": [
+        "late 19th century psychiatry"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_illustration"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "European psychiatric asylum 1890s archive",
+        "19th century psychiatry hospital Europe photograph"
+      ],
+      "fallback_queries": [
+        "European psychiatric asylum 1890s archive documentary archive",
+        "European psychiatric asylum 1890s archive historical photograph",
+        "European psychiatric asylum 1890s archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 5,
+      "beat_text": "Foi nesse ambiente que a sexualidade também começou a ser transformada em objeto de diagnóstico.\nComportamentos que durante séculos haviam sido discutidos principalmente em termos religiosos, jurídicos ou morais passaram a receber também uma interpretação médica.\nA mudança parecia pequena.\nMas tinha consequências profundas.\nSe uma característica humana era considerada uma doença, então ela poderia, ao menos teoricamente, ser tratada.\nE foi exatamente isso que muitos passaram a tentar.",
+      "narration": "Foi nesse ambiente que a sexualidade também começou a ser transformada em objeto de diagnóstico.\nComportamentos que durante séculos haviam sido discutidos principalmente em termos religiosos, jurídicos ou morais passaram a receber também uma interpretação médica.\nA mudança parecia pequena.\nMas tinha consequências profundas.\nSe uma característica humana era considerada uma doença, então ela poderia, ao menos teoricamente, ser tratada.\nE foi exatamente isso que muitos passaram a tentar.",
+      "visual_intent": "Show the medicalization of sexuality through early sexology and psychiatric texts",
+      "subject": [
+        "early sexology and psychiatric classification"
+      ],
+      "subject_identity": [],
+      "action": [
+        "medical study and classification"
+      ],
+      "environment": [
+        "late 19th century medical library or clinic"
+      ],
+      "required_elements": [
+        "early sexology and psychiatric classification"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "book_scan",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "sexology psychiatry late 19th century archive",
+        "medical sexuality classification 1890s book archive"
+      ],
+      "fallback_queries": [
+        "sexology psychiatry late 19th century archive documentary archive",
+        "sexology psychiatry late 19th century archive historical photograph",
+        "sexology psychiatry late 19th century archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": true,
+      "action_priority": "medium",
+      "scene_type": "object_focus",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 6,
+      "beat_text": "No início do século XX, não existia um único método.\nAlguns médicos apostavam na psicanálise.\nOutros procuravam explicações hormonais.\nAlguns investigavam o cérebro.\nE havia aqueles que acreditavam que o comportamento sexual poderia ser condicionado.",
+      "narration": "No início do século XX, não existia um único método.\nAlguns médicos apostavam na psicanálise.\nOutros procuravam explicações hormonais.\nAlguns investigavam o cérebro.\nE havia aqueles que acreditavam que o comportamento sexual poderia ser condicionado.",
+      "visual_intent": "Present competing early twentieth-century theories: psychoanalysis, hormones, brain research and conditioning",
+      "subject": [
+        "early 20th century psychiatric treatment methods"
+      ],
+      "subject_identity": [],
+      "action": [
+        "researching sexuality through multiple medical theories"
+      ],
+      "environment": [
+        "clinic laboratory psychoanalytic office"
+      ],
+      "required_elements": [
+        "early 20th century psychiatric treatment methods"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_archive_video",
+        "historical_document"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "psychoanalysis early 20th century archive",
+        "hormone research laboratory 1930s archive",
+        "behaviorism psychology laboratory historical"
+      ],
+      "fallback_queries": [
+        "psychoanalysis early 20th century archive documentary archive",
+        "psychoanalysis early 20th century archive historical photograph",
+        "psychoanalysis early 20th century archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 7,
+      "beat_text": "Mas uma transformação decisiva ocorreu quando esses conceitos começaram a aparecer nos grandes manuais de psiquiatria.\nEm 1952, a Associação Americana de Psiquiatria publicou a primeira edição do Diagnostic and Statistical Manual of Mental Disorders, o DSM.\nNaquele manual, a homossexualidade aparecia dentro das classificações psiquiátricas da época.",
+      "narration": "Mas uma transformação decisiva ocorreu quando esses conceitos começaram a aparecer nos grandes manuais de psiquiatria.\nEm 1952, a Associação Americana de Psiquiatria publicou a primeira edição do Diagnostic and Statistical Manual of Mental Disorders, o DSM.\nNaquele manual, a homossexualidade aparecia dentro das classificações psiquiátricas da época.",
+      "visual_intent": "Show the publication and physical appearance of DSM-I in 1952",
+      "subject": [
+        "DSM-I 1952"
+      ],
+      "subject_identity": [
+        "DSM-I",
+        "American Psychiatric Association"
+      ],
+      "action": [
+        "publication and use of diagnostic manual"
+      ],
+      "environment": [
+        "American psychiatric institutional context"
+      ],
+      "required_elements": [
+        "DSM-I 1952"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "book_scan",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "DSM-I 1952 first edition archive",
+        "Diagnostic and Statistical Manual 1952 scan"
+      ],
+      "fallback_queries": [
+        "DSM-I 1952 first edition archive documentary archive",
+        "DSM-I 1952 first edition archive historical photograph",
+        "DSM-I 1952 first edition archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": true,
+      "action_priority": "medium",
+      "scene_type": "object_focus",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 8,
+      "beat_text": "Em 1968, o DSM-II ainda a mantinha como um transtorno.\nUm diagnóstico impresso em um manual não ficava restrito às páginas de um livro.\nEle entrava nos hospitais.\nNos consultórios.\nNas universidades.\nE ajudava a determinar o tipo de tratamento que uma pessoa poderia receber.",
+      "narration": "Em 1968, o DSM-II ainda a mantinha como um transtorno.\nUm diagnóstico impresso em um manual não ficava restrito às páginas de um livro.\nEle entrava nos hospitais.\nNos consultórios.\nNas universidades.\nE ajudava a determinar o tipo de tratamento que uma pessoa poderia receber.",
+      "visual_intent": "Show DSM-II 1968 and how diagnostic classifications shaped hospitals, offices and universities",
+      "subject": [
+        "DSM-II 1968"
+      ],
+      "subject_identity": [
+        "DSM-II",
+        "American Psychiatric Association"
+      ],
+      "action": [
+        "manual classification influencing clinical practice"
+      ],
+      "environment": [
+        "hospital consultation university psychiatry"
+      ],
+      "required_elements": [
+        "DSM-II 1968"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "book_scan",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "DSM-II 1968 homosexuality classification archive",
+        "DSM II 1968 historical scan",
+        "psychiatric hospital university 1960s archive"
+      ],
+      "fallback_queries": [
+        "DSM-II 1968 homosexuality classification archive documentary archive",
+        "DSM-II 1968 homosexuality classification archive historical photograph",
+        "DSM-II 1968 homosexuality classification archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": true,
+      "action_priority": "medium",
+      "scene_type": "object_focus",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 9,
+      "beat_text": "Foi nesse contexto que ganharam espaço as chamadas terapias de aversão.\nA ideia vinha do behaviorismo.\nSe determinado comportamento pudesse ser associado a uma experiência desagradável, talvez o indivíduo aprendesse a evitá-lo.",
+      "narration": "Foi nesse contexto que ganharam espaço as chamadas terapias de aversão.\nA ideia vinha do behaviorismo.\nSe determinado comportamento pudesse ser associado a uma experiência desagradável, talvez o indivíduo aprendesse a evitá-lo.",
+      "visual_intent": "Explain behaviorist aversion therapy with period-correct laboratory and treatment imagery",
+      "subject": [
+        "behavioral aversion therapy"
+      ],
+      "subject_identity": [],
+      "action": [
+        "conditioning behavior through unpleasant stimulus"
+      ],
+      "environment": [
+        "behavior psychology laboratory"
+      ],
+      "required_elements": [
+        "behavioral aversion therapy"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "behaviorism aversion therapy laboratory 1950s archive",
+        "behavior therapy aversion conditioning historical footage"
+      ],
+      "fallback_queries": [
+        "behaviorism aversion therapy laboratory 1950s archive documentary archive",
+        "behaviorism aversion therapy laboratory 1950s archive historical photograph",
+        "behaviorism aversion therapy laboratory 1950s archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 10,
+      "beat_text": "Na prática, isso produziu algumas das páginas mais controversas da história da psiquiatria.\nNa Grã-Bretanha, principalmente durante as décadas de 1960 e 1970, homens homossexuais foram submetidos a tratamentos de aversão em hospitais.\nUm dos métodos utilizava choques elétricos.\nO paciente observava fotografias de homens e mulheres.\nQuando determinadas imagens eram apresentadas, recebia um estímulo elétrico desagradável.",
+      "narration": "Na prática, isso produziu algumas das páginas mais controversas da história da psiquiatria.\nNa Grã-Bretanha, principalmente durante as décadas de 1960 e 1970, homens homossexuais foram submetidos a tratamentos de aversão em hospitais.\nUm dos métodos utilizava choques elétricos.\nO paciente observava fotografias de homens e mulheres.\nQuando determinadas imagens eram apresentadas, recebia um estímulo elétrico desagradável.",
+      "visual_intent": "Show British hospital aversion therapy in the 1960s and 1970s, focusing on period documentation and non-graphic treatment context",
+      "subject": [
+        "British psychiatric aversion therapy"
+      ],
+      "subject_identity": [],
+      "action": [
+        "patient undergoing aversion conditioning"
+      ],
+      "environment": [
+        "British hospital 1960s 1970s"
+      ],
+      "required_elements": [
+        "British psychiatric aversion therapy"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_document",
+        "historical_archive_video"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "Britain aversion therapy homosexuality hospital 1960s archive",
+        "UK psychiatric hospital aversion therapy historical"
+      ],
+      "fallback_queries": [
+        "Britain aversion therapy homosexuality hospital 1960s archive documentary archive",
+        "Britain aversion therapy homosexuality hospital 1960s archive historical photograph",
+        "Britain aversion therapy homosexuality hospital 1960s archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": true,
+      "specific_object_required": false,
+      "action_priority": "high",
+      "scene_type": "human_action",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 11,
+      "beat_text": "A intenção era enfraquecer a atração por pessoas do mesmo sexo e reforçar a atração pelo sexo oposto.\nMas os choques não eram o único método.\nEm alguns casos, substâncias que provocavam náuseas eram utilizadas.\nO princípio era semelhante.\nDesejo.\nImagem.",
+      "narration": "A intenção era enfraquecer a atração por pessoas do mesmo sexo e reforçar a atração pelo sexo oposto.\nMas os choques não eram o único método.\nEm alguns casos, substâncias que provocavam náuseas eram utilizadas.\nO princípio era semelhante.\nDesejo.\nImagem.",
+      "visual_intent": "Show chemical aversion methods and repeated conditioning without sensationalism",
+      "subject": [
+        "chemical aversion therapy"
+      ],
+      "subject_identity": [],
+      "action": [
+        "administering aversive medication and repeated conditioning"
+      ],
+      "environment": [
+        "historical psychiatric clinic"
+      ],
+      "required_elements": [
+        "chemical aversion therapy"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "chemical aversion therapy nausea historical psychiatry",
+        "aversion therapy emetic drugs historical archive"
+      ],
+      "fallback_queries": [
+        "chemical aversion therapy nausea historical psychiatry documentary archive",
+        "chemical aversion therapy nausea historical psychiatry historical photograph",
+        "chemical aversion therapy nausea historical psychiatry institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 12,
+      "beat_text": "Náusea.\nRepulsa.\nRepetição.",
+      "narration": "Náusea.\nRepulsa.\nRepetição.",
+      "visual_intent": "Show the variety and duration of historical interventions",
+      "subject": [
+        "historical conversion treatment methods"
+      ],
+      "subject_identity": [],
+      "action": [
+        "therapy hypnosis medication and prolonged treatment"
+      ],
+      "environment": [
+        "20th century clinical settings"
+      ],
+      "required_elements": [
+        "historical conversion treatment methods"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_document"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "psychoanalysis homosexuality historical treatment",
+        "hypnosis psychiatry historical archive",
+        "libido suppressing drugs psychiatry history"
+      ],
+      "fallback_queries": [
+        "psychoanalysis homosexuality historical treatment documentary archive",
+        "psychoanalysis homosexuality historical treatment historical photograph",
+        "psychoanalysis homosexuality historical treatment institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 13,
+      "beat_text": "Alguns pacientes permaneceram submetidos a esses procedimentos durante semanas.\nOutros passaram por tratamentos por períodos ainda maiores.\nTambém foram empregados diferentes métodos em lugares e períodos distintos: psicanálise, hipnose, medicamentos destinados a reduzir a libido e outras formas de intervenção psicológica.\nÉ importante fazer aqui uma distinção.",
+      "narration": "Alguns pacientes permaneceram submetidos a esses procedimentos durante semanas.\nOutros passaram por tratamentos por períodos ainda maiores.\nTambém foram empregados diferentes métodos em lugares e períodos distintos: psicanálise, hipnose, medicamentos destinados a reduzir a libido e outras formas de intervenção psicológica.\nÉ importante fazer aqui uma distinção.",
+      "visual_intent": "Clearly distinguish electroconvulsive therapy from behavioral aversion therapy",
+      "subject": [
+        "ECT historical apparatus versus aversion therapy electrodes"
+      ],
+      "subject_identity": [
+        "ECT",
+        "behavioral aversion therapy"
+      ],
+      "action": [
+        "compare two distinct procedures without substituting one for the other"
+      ],
+      "environment": [
+        "psychiatric hospital documentation"
+      ],
+      "required_elements": [
+        "ECT historical apparatus versus aversion therapy electrodes"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_document",
+        "historical_archive_video"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "electroconvulsive therapy 1938 historical apparatus archive",
+        "aversion therapy electric shock electrodes historical psychiatry"
+      ],
+      "fallback_queries": [
+        "electroconvulsive therapy 1938 historical apparatus archive documentary archive",
+        "electroconvulsive therapy 1938 historical apparatus archive historical photograph",
+        "electroconvulsive therapy 1938 historical apparatus archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": true,
+      "action_priority": "medium",
+      "scene_type": "object_focus",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 14,
+      "beat_text": "A eletroconvulsoterapia, conhecida popularmente como eletrochoque, é um procedimento médico desenvolvido no final da década de 1930 e que ainda possui aplicações específicas na psiquiatria moderna.\nEla não é a mesma coisa que a terapia comportamental de aversão com choques utilizada historicamente para tentar modificar a orientação sexual.\nMisturar as duas práticas cria uma imagem historicamente incorreta.\nMas havia algo em comum entre muitas dessas tentativas.\nTodas partiam da ideia de que a orientação homossexual era um problema que deveria ser alterado.\nE essa ideia começou a ser cada vez mais questionada.",
+      "narration": "A eletroconvulsoterapia, conhecida popularmente como eletrochoque, é um procedimento médico desenvolvido no final da década de 1930 e que ainda possui aplicações específicas na psiquiatria moderna.\nEla não é a mesma coisa que a terapia comportamental de aversão com choques utilizada historicamente para tentar modificar a orientação sexual.\nMisturar as duas práticas cria uma imagem historicamente incorreta.\nMas havia algo em comum entre muitas dessas tentativas.\nTodas partiam da ideia de que a orientação homossexual era um problema que deveria ser alterado.\nE essa ideia começou a ser cada vez mais questionada.",
+      "visual_intent": "Show growing scientific and institutional challenge to the assumption that homosexuality required treatment",
+      "subject": [
+        "medical classification under challenge"
+      ],
+      "subject_identity": [],
+      "action": [
+        "researchers and activists questioning diagnosis"
+      ],
+      "environment": [
+        "universities psychiatric institutions public debate"
+      ],
+      "required_elements": [
+        "medical classification under challenge"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_archive_video",
+        "historical_document"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "homosexuality psychological research 1950s 1960s archive",
+        "gay rights psychiatry protest historical"
+      ],
+      "fallback_queries": [
+        "homosexuality psychological research 1950s 1960s archive documentary archive",
+        "homosexuality psychological research 1950s 1960s archive historical photograph",
+        "homosexuality psychological research 1950s 1960s archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 15,
+      "beat_text": "Enquanto alguns médicos procuravam maneiras de mudar a orientação sexual, outros pesquisadores começaram a perguntar algo diferente:\ne se não houvesse uma doença para tratar?\nA mudança científica começou lentamente.\nPesquisas passaram a questionar a associação automática entre homossexualidade e transtorno psicológico.",
+      "narration": "Enquanto alguns médicos procuravam maneiras de mudar a orientação sexual, outros pesquisadores começaram a perguntar algo diferente:\ne se não houvesse uma doença para tratar?\nA mudança científica começou lentamente.\nPesquisas passaram a questionar a associação automática entre homossexualidade e transtorno psicológico.",
+      "visual_intent": "Show research challenging pathology and early gay-rights opposition to psychiatric classification",
+      "subject": [
+        "researchers and gay activists"
+      ],
+      "subject_identity": [],
+      "action": [
+        "conducting research and publicly challenging institutions"
+      ],
+      "environment": [
+        "university and protest settings"
+      ],
+      "required_elements": [
+        "researchers and gay activists"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_archive_video",
+        "newspaper_scan"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "Evelyn Hooker homosexuality study archive",
+        "gay activists American Psychiatric Association protest 1970 archive"
+      ],
+      "fallback_queries": [
+        "Evelyn Hooker homosexuality study archive documentary archive",
+        "Evelyn Hooker homosexuality study archive historical photograph",
+        "Evelyn Hooker homosexuality study archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": true,
+      "specific_object_required": false,
+      "action_priority": "high",
+      "scene_type": "human_action",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 16,
+      "beat_text": "Ao mesmo tempo, homens e mulheres homossexuais começaram a contestar publicamente as instituições que os classificavam como doentes.\nEssa disputa chegou diretamente à psiquiatria americana.\nEm 1972, durante um encontro da Associação Americana de Psiquiatria, uma figura apareceu diante do público usando uma máscara.\nEra um psiquiatra.\nPara proteger sua identidade, apresentou-se como “Dr. H. Anonymous”.\nSeu verdadeiro nome era John Fryer.\nEle era homossexual.",
+      "narration": "Ao mesmo tempo, homens e mulheres homossexuais começaram a contestar publicamente as instituições que os classificavam como doentes.\nEssa disputa chegou diretamente à psiquiatria americana.\nEm 1972, durante um encontro da Associação Americana de Psiquiatria, uma figura apareceu diante do público usando uma máscara.\nEra um psiquiatra.\nPara proteger sua identidade, apresentou-se como “Dr. H. Anonymous”.\nSeu verdadeiro nome era John Fryer.\nEle era homossexual.",
+      "visual_intent": "Show John Fryer appearing as Dr. H. Anonymous at the 1972 APA meeting",
+      "subject": [
+        "John Fryer as Dr. H. Anonymous"
+      ],
+      "subject_identity": [
+        "John Fryer",
+        "Dr. H. Anonymous"
+      ],
+      "action": [
+        "masked psychiatrist addressing an audience"
+      ],
+      "environment": [
+        "APA meeting 1972"
+      ],
+      "required_elements": [
+        "John Fryer as Dr. H. Anonymous"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "John Fryer Dr H Anonymous 1972 APA mask archive",
+        "Dr H Anonymous 1972 photograph"
+      ],
+      "fallback_queries": [
+        "John Fryer Dr H Anonymous 1972 APA mask archive documentary archive",
+        "John Fryer Dr H Anonymous 1972 APA mask archive historical photograph",
+        "John Fryer Dr H Anonymous 1972 APA mask archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": true,
+      "specific_object_required": false,
+      "action_priority": "high",
+      "scene_type": "human_action",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 17,
+      "beat_text": "E sabia que admitir isso publicamente poderia destruir sua carreira.\nDiante de outros psiquiatras, Fryer falou sobre uma contradição difícil de ignorar.\nHavia médicos homossexuais trabalhando dentro da própria psiquiatria enquanto a profissão classificava pessoas como eles como portadoras de um transtorno.",
+      "narration": "E sabia que admitir isso publicamente poderia destruir sua carreira.\nDiante de outros psiquiatras, Fryer falou sobre uma contradição difícil de ignorar.\nHavia médicos homossexuais trabalhando dentro da própria psiquiatria enquanto a profissão classificava pessoas como eles como portadoras de um transtorno.",
+      "visual_intent": "Show the contradiction Fryer described and the symbolic importance of the masked speech",
+      "subject": [
+        "John Fryer and psychiatrists"
+      ],
+      "subject_identity": [
+        "John Fryer",
+        "Dr. H. Anonymous"
+      ],
+      "action": [
+        "speaking to psychiatric colleagues"
+      ],
+      "environment": [
+        "conference auditorium"
+      ],
+      "required_elements": [
+        "John Fryer and psychiatrists"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_document"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "John Fryer APA speech 1972 archive",
+        "Dr H Anonymous speech psychiatry conference"
+      ],
+      "fallback_queries": [
+        "John Fryer APA speech 1972 archive documentary archive",
+        "John Fryer APA speech 1972 archive historical photograph",
+        "John Fryer APA speech 1972 archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": true,
+      "specific_object_required": false,
+      "action_priority": "high",
+      "scene_type": "human_action",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 18,
+      "beat_text": "A imagem daquele homem mascarado se tornou um dos símbolos da mudança que estava acontecendo.\nNo ano seguinte, em 1973, a Associação Americana de Psiquiatria retirou a homossexualidade, por si só, da classificação de transtornos mentais do DSM-II.",
+      "narration": "A imagem daquele homem mascarado se tornou um dos símbolos da mudança que estava acontecendo.\nNo ano seguinte, em 1973, a Associação Americana de Psiquiatria retirou a homossexualidade, por si só, da classificação de transtornos mentais do DSM-II.",
+      "visual_intent": "Show the 1973 APA decision removing homosexuality itself from DSM-II disorder classification",
+      "subject": [
+        "APA 1973 decision"
+      ],
+      "subject_identity": [
+        "American Psychiatric Association",
+        "DSM-II",
+        "1973"
+      ],
+      "action": [
+        "institutional decision and manual revision"
+      ],
+      "environment": [
+        "American psychiatry"
+      ],
+      "required_elements": [
+        "APA 1973 decision"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "newspaper_scan",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "APA 1973 homosexuality DSM decision archive",
+        "1973 American Psychiatric Association homosexuality removal newspaper"
+      ],
+      "fallback_queries": [
+        "APA 1973 homosexuality DSM decision archive documentary archive",
+        "APA 1973 homosexuality DSM decision archive historical photograph",
+        "APA 1973 homosexuality DSM decision archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": true,
+      "action_priority": "medium",
+      "scene_type": "object_focus",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 19,
+      "beat_text": "Mas a história não terminou ali.\nUma categoria relacionada à orientação sexual permaneceu por algum tempo.\nNo DSM-III, publicado em 1980, ainda existia a chamada “homossexualidade egodistônica”, aplicada quando uma pessoa experimentava sofrimento relacionado à própria orientação e desejava mudá-la.",
+      "narration": "Mas a história não terminou ali.\nUma categoria relacionada à orientação sexual permaneceu por algum tempo.\nNo DSM-III, publicado em 1980, ainda existia a chamada “homossexualidade egodistônica”, aplicada quando uma pessoa experimentava sofrimento relacionado à própria orientação e desejava mudá-la.",
+      "visual_intent": "Show DSM-III 1980 and the ego-dystonic homosexuality category",
+      "subject": [
+        "DSM-III 1980"
+      ],
+      "subject_identity": [
+        "DSM-III",
+        "1980",
+        "ego-dystonic homosexuality"
+      ],
+      "action": [
+        "classification entry in diagnostic manual"
+      ],
+      "environment": [
+        "manual pages"
+      ],
+      "required_elements": [
+        "DSM-III 1980"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "book_scan"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "DSM-III 1980 ego-dystonic homosexuality archive",
+        "ego dystonic homosexuality DSM III scan"
+      ],
+      "fallback_queries": [
+        "DSM-III 1980 ego-dystonic homosexuality archive documentary archive",
+        "DSM-III 1980 ego-dystonic homosexuality archive historical photograph",
+        "DSM-III 1980 ego-dystonic homosexuality archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": true,
+      "action_priority": "medium",
+      "scene_type": "object_focus",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 20,
+      "beat_text": "Essa categoria desapareceria posteriormente.\nEm 1987, ela já não fazia parte dos critérios do DSM-III-R.",
+      "narration": "Essa categoria desapareceria posteriormente.\nEm 1987, ela já não fazia parte dos critérios do DSM-III-R.",
+      "visual_intent": "Show DSM-III-R 1987 and the disappearance of the category",
+      "subject": [
+        "DSM-III-R 1987"
+      ],
+      "subject_identity": [
+        "DSM-III-R",
+        "1987"
+      ],
+      "action": [
+        "revised diagnostic classification"
+      ],
+      "environment": [
+        "manual pages"
+      ],
+      "required_elements": [
+        "DSM-III-R 1987"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "book_scan"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "DSM-III-R 1987 homosexuality classification archive",
+        "DSM III R 1987 diagnostic manual scan"
+      ],
+      "fallback_queries": [
+        "DSM-III-R 1987 homosexuality classification archive documentary archive",
+        "DSM-III-R 1987 homosexuality classification archive historical photograph",
+        "DSM-III-R 1987 homosexuality classification archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": true,
+      "action_priority": "medium",
+      "scene_type": "object_focus",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 21,
+      "beat_text": "Mas havia outra instituição cuja classificação alcançava praticamente todo o planeta.\nA Organização Mundial da Saúde.\nDurante décadas, versões da Classificação Internacional de Doenças também carregaram categorias relacionadas à homossexualidade.",
+      "narration": "Mas havia outra instituição cuja classificação alcançava praticamente todo o planeta.\nA Organização Mundial da Saúde.\nDurante décadas, versões da Classificação Internacional de Doenças também carregaram categorias relacionadas à homossexualidade.",
+      "visual_intent": "Introduce the World Health Organization and ICD classifications",
+      "subject": [
+        "World Health Organization and ICD"
+      ],
+      "subject_identity": [
+        "World Health Organization",
+        "ICD"
+      ],
+      "action": [
+        "international health classification"
+      ],
+      "environment": [
+        "WHO historical institutional setting"
+      ],
+      "required_elements": [
+        "World Health Organization and ICD"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "institutional_archive",
+        "historical_document",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "World Health Organization ICD homosexuality historical archive",
+        "WHO headquarters historical archive 1980s"
+      ],
+      "fallback_queries": [
+        "World Health Organization ICD homosexuality historical archive documentary archive",
+        "World Health Organization ICD homosexuality historical archive historical photograph",
+        "World Health Organization ICD homosexuality historical archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 22,
+      "beat_text": "Até que, em 17 de maio de 1990, a Assembleia Mundial da Saúde aprovou uma revisão que deixava de tratar a homossexualidade como transtorno mental.\nA data se tornaria simbólica.\nDécadas de classificação médica estavam sendo desmontadas.",
+      "narration": "Até que, em 17 de maio de 1990, a Assembleia Mundial da Saúde aprovou uma revisão que deixava de tratar a homossexualidade como transtorno mental.\nA data se tornaria simbólica.\nDécadas de classificação médica estavam sendo desmontadas.",
+      "visual_intent": "Show the 17 May 1990 World Health Assembly decision and its symbolic importance",
+      "subject": [
+        "World Health Assembly 1990"
+      ],
+      "subject_identity": [
+        "World Health Organization",
+        "World Health Assembly",
+        "17 May 1990"
+      ],
+      "action": [
+        "revision of international classification"
+      ],
+      "environment": [
+        "WHO Geneva or official documentation"
+      ],
+      "required_elements": [
+        "World Health Assembly 1990"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "institutional_archive",
+        "historical_document",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "World Health Assembly 17 May 1990 homosexuality archive",
+        "WHO 1990 homosexuality declassification historical"
+      ],
+      "fallback_queries": [
+        "World Health Assembly 17 May 1990 homosexuality archive documentary archive",
+        "World Health Assembly 17 May 1990 homosexuality archive historical photograph",
+        "World Health Assembly 17 May 1990 homosexuality archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 23,
+      "beat_text": "Mas abandonar um diagnóstico em um manual não apaga imediatamente práticas, instituições e crenças.\nTentativas de mudar a orientação sexual continuaram existindo sob diferentes nomes.\nHoje elas costumam ser agrupadas sob expressões como “terapias de conversão” ou esforços de mudança de orientação sexual.",
+      "narration": "Mas abandonar um diagnóstico em um manual não apaga imediatamente práticas, instituições e crenças.\nTentativas de mudar a orientação sexual continuaram existindo sob diferentes nomes.\nHoje elas costumam ser agrupadas sob expressões como “terapias de conversão” ou esforços de mudança de orientação sexual.",
+      "visual_intent": "Show persistence of conversion practices after diagnostic changes",
+      "subject": [
+        "conversion therapy history"
+      ],
+      "subject_identity": [],
+      "action": [
+        "continued attempts to change sexual orientation"
+      ],
+      "environment": [
+        "late 20th century institutional context"
+      ],
+      "required_elements": [
+        "conversion therapy history"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "newspaper_scan",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "conversion therapy history 1990s archive",
+        "sexual orientation change efforts historical archive"
+      ],
+      "fallback_queries": [
+        "conversion therapy history 1990s archive documentary archive",
+        "conversion therapy history 1990s archive historical photograph",
+        "conversion therapy history 1990s archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 24,
+      "beat_text": "A diferença fundamental é que as principais organizações médicas e psiquiátricas contemporâneas não reconhecem a homossexualidade como uma doença.\nTambém não há evidência científica confiável de que essas práticas consigam transformar uma pessoa homossexual em heterossexual.\nPesquisas modernas associam esses esforços a riscos de danos psicológicos, incluindo ansiedade, depressão e outros efeitos negativos.",
+      "narration": "A diferença fundamental é que as principais organizações médicas e psiquiátricas contemporâneas não reconhecem a homossexualidade como uma doença.\nTambém não há evidência científica confiável de que essas práticas consigam transformar uma pessoa homossexual em heterossexual.\nPesquisas modernas associam esses esforços a riscos de danos psicológicos, incluindo ansiedade, depressão e outros efeitos negativos.",
+      "visual_intent": "Show contemporary medical consensus and research on lack of efficacy and psychological harms",
+      "subject": [
+        "modern medical consensus and research"
+      ],
+      "subject_identity": [],
+      "action": [
+        "professional organizations rejecting pathologization and researchers documenting harms"
+      ],
+      "environment": [
+        "institutional reports and research documents"
+      ],
+      "required_elements": [
+        "modern medical consensus and research"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "institutional_archive",
+        "research_document",
+        "historical_document"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "American Psychiatric Association homosexuality not mental disorder statement",
+        "WHO homosexuality not disease statement archive",
+        "conversion therapy harms research report"
+      ],
+      "fallback_queries": [
+        "American Psychiatric Association homosexuality not mental disorder statement documentary archive",
+        "American Psychiatric Association homosexuality not mental disorder statement historical photograph",
+        "American Psychiatric Association homosexuality not mental disorder statement institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": true,
+      "action_priority": "medium",
+      "scene_type": "object_focus",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 25,
+      "beat_text": "Talvez o aspecto mais inquietante dessa história esteja justamente aí.\nMuitos dos profissionais envolvidos nas antigas tentativas de tratamento não acreditavam estar participando de uma perseguição.\nDentro dos conhecimentos, preconceitos e valores de sua época, alguns acreditavam estar praticando medicina.\nE é isso que torna essa história tão importante.",
+      "narration": "Talvez o aspecto mais inquietante dessa história esteja justamente aí.\nMuitos dos profissionais envolvidos nas antigas tentativas de tratamento não acreditavam estar participando de uma perseguição.\nDentro dos conhecimentos, preconceitos e valores de sua época, alguns acreditavam estar praticando medicina.\nE é isso que torna essa história tão importante.",
+      "visual_intent": "Reflect on historical clinicians acting within the assumptions and prejudices of their era",
+      "subject": [
+        "mid-20th-century psychiatrists"
+      ],
+      "subject_identity": [],
+      "action": [
+        "doctors working in historical clinical settings"
+      ],
+      "environment": [
+        "psychiatric hospital 1950s 1960s"
+      ],
+      "required_elements": [
+        "mid-20th-century psychiatrists"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_archive_video"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "mid 20th century psychiatrists hospital archive",
+        "psychiatric doctors 1960s historical photograph"
+      ],
+      "fallback_queries": [
+        "mid 20th century psychiatrists hospital archive documentary archive",
+        "mid 20th century psychiatrists hospital archive historical photograph",
+        "mid 20th century psychiatrists hospital archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 26,
+      "beat_text": "Porque a medicina não existe fora da sociedade.\nEla é construída por seres humanos.\nSeus diagnósticos mudam.\nSeus manuais mudam.\nSeus tratamentos mudam.\nE aquilo que uma geração pode apresentar como verdade científica pode ser profundamente questionado pela geração seguinte.",
+      "narration": "Porque a medicina não existe fora da sociedade.\nEla é construída por seres humanos.\nSeus diagnósticos mudam.\nSeus manuais mudam.\nSeus tratamentos mudam.\nE aquilo que uma geração pode apresentar como verdade científica pode ser profundamente questionado pela geração seguinte.",
+      "visual_intent": "Show medicine and diagnostic manuals changing across generations",
+      "subject": [
+        "history of psychiatry and medical manuals"
+      ],
+      "subject_identity": [],
+      "action": [
+        "changing diagnoses treatments and standards over time"
+      ],
+      "environment": [
+        "archive library hospitals across decades"
+      ],
+      "required_elements": [
+        "history of psychiatry and medical manuals"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "archival_photo",
+        "historical_archive_video"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "history of psychiatry medical manuals archive montage",
+        "historic psychiatry manuals timeline"
+      ],
+      "fallback_queries": [
+        "history of psychiatry medical manuals archive montage documentary archive",
+        "history of psychiatry medical manuals archive montage historical photograph",
+        "history of psychiatry medical manuals archive montage institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 27,
+      "beat_text": "Durante décadas, homens e mulheres entraram em hospitais acreditando que algo fundamental sobre eles precisava ser corrigido.\nAlguns receberam medicamentos.\nOutros passaram anos em terapia.\nAlguns foram submetidos a procedimentos destinados a transformar desejo em medo e repulsa.\nAté que a própria medicina começou a perceber que talvez estivesse tentando curar aquilo que nunca havia sido uma doença.",
+      "narration": "Durante décadas, homens e mulheres entraram em hospitais acreditando que algo fundamental sobre eles precisava ser corrigido.\nAlguns receberam medicamentos.\nOutros passaram anos em terapia.\nAlguns foram submetidos a procedimentos destinados a transformar desejo em medo e repulsa.\nAté que a própria medicina começou a perceber que talvez estivesse tentando curar aquilo que nunca havia sido uma doença.",
+      "visual_intent": "Return to patients and the human consequences of historical treatment attempts",
+      "subject": [
+        "historical psychiatric patients"
+      ],
+      "subject_identity": [],
+      "action": [
+        "receiving medication therapy and aversion procedures"
+      ],
+      "environment": [
+        "historical hospital and consultation rooms"
+      ],
+      "required_elements": [
+        "historical psychiatric patients"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "archival_photo",
+        "historical_archive_video"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "psychiatric patients treatment 1950s 1960s archive",
+        "historical psychiatric hospital therapy session"
+      ],
+      "fallback_queries": [
+        "psychiatric patients treatment 1950s 1960s archive documentary archive",
+        "psychiatric patients treatment 1950s 1960s archive historical photograph",
+        "psychiatric patients treatment 1950s 1960s archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 28,
+      "beat_text": "Até que a própria medicina começou a perceber que talvez estivesse tentando curar aquilo que nunca havia sido uma doença.",
+      "narration": "Até que a própria medicina começou a perceber que talvez estivesse tentando curar aquilo que nunca havia sido uma doença.",
+      "visual_intent": "Show the medical reevaluation that led to depathologization",
+      "subject": [
+        "depathologization of homosexuality"
+      ],
+      "subject_identity": [],
+      "action": [
+        "institutional reassessment"
+      ],
+      "environment": [
+        "psychiatry 1970s archive"
+      ],
+      "required_elements": [
+        "depathologization of homosexuality"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "archival_photo",
+        "newspaper_scan"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "1970s psychiatry homosexuality declassification archive",
+        "APA homosexuality depathologization historical"
+      ],
+      "fallback_queries": [
+        "1970s psychiatry homosexuality declassification archive documentary archive",
+        "1970s psychiatry homosexuality declassification archive historical photograph",
+        "1970s psychiatry homosexuality declassification archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 29,
+      "beat_text": "A questão, portanto, não é apenas por que a medicina tentou mudar a homossexualidade.\nExiste uma pergunta ainda maior.\nQuantas vezes, ao longo da história, aquilo que uma sociedade considerou diferente acabou sendo transformado em diagnóstico?",
+      "narration": "A questão, portanto, não é apenas por que a medicina tentou mudar a homossexualidade.\nExiste uma pergunta ainda maior.\nQuantas vezes, ao longo da história, aquilo que uma sociedade considerou diferente acabou sendo transformado em diagnóstico?",
+      "visual_intent": "Broaden the question to the history of transforming social difference into medical diagnosis",
+      "subject": [
+        "history of medical diagnosis"
+      ],
+      "subject_identity": [],
+      "action": [
+        "classification of human difference"
+      ],
+      "environment": [
+        "medical archive and diagnostic books"
+      ],
+      "required_elements": [
+        "history of medical diagnosis"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "archival_photo"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "historical psychiatric classification books archive",
+        "medical diagnosis history archive documents"
+      ],
+      "fallback_queries": [
+        "historical psychiatric classification books archive documentary archive",
+        "historical psychiatric classification books archive historical photograph",
+        "historical psychiatric classification books archive institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    },
+    {
+      "beat_index": 30,
+      "beat_text": "E quantas certezas médicas do nosso próprio tempo serão vistas de maneira completamente diferente no futuro?",
+      "narration": "E quantas certezas médicas do nosso próprio tempo serão vistas de maneira completamente diferente no futuro?",
+      "visual_intent": "End with a reflective visual about how medical certainty changes over time",
+      "subject": [
+        "medical knowledge across generations"
+      ],
+      "subject_identity": [],
+      "action": [
+        "reflective transition from old to newer medical texts"
+      ],
+      "environment": [
+        "archive library or historical medical collection"
+      ],
+      "required_elements": [
+        "medical knowledge across generations"
+      ],
+      "preferred_elements": [
+        "authentic archival material",
+        "period-correct clothing/interiors/equipment/documents",
+        "clear historical attribution"
+      ],
+      "forbidden_elements": [
+        "generic modern hospital stock presented as historical",
+        "sensationalized shock imagery",
+        "graphic suffering",
+        "unrelated psychiatric procedure footage",
+        "AI-looking reenactment when authentic archives are available"
+      ],
+      "anachronism_risks": [
+        "modern medical equipment",
+        "modern clothing or hospital interiors",
+        "present-day staged imagery presented as archive"
+      ],
+      "ideal_media_types": [
+        "historical_document",
+        "archival_photo",
+        "historical_archive_video"
+      ],
+      "asset_priority": [
+        "historical_archive_video",
+        "archival_photo",
+        "historical_document",
+        "newspaper_scan",
+        "institutional_archive",
+        "museum_collection",
+        "historical_illustration",
+        "period_accurate_reconstruction"
+      ],
+      "queries": [
+        "old and modern medical books archive cinematic",
+        "history of medicine archive library documentary"
+      ],
+      "fallback_queries": [
+        "old and modern medical books archive cinematic documentary archive",
+        "old and modern medical books archive cinematic historical photograph",
+        "old and modern medical books archive cinematic institutional archive"
+      ],
+      "historical_specificity": "high",
+      "search_strategy": {
+        "primary_language": "en",
+        "prefer_exact_event_person_institution": true,
+        "prefer_archival_sources": true,
+        "allow_reconstruction_only_if_needed": true,
+        "avoid_generic_stock": true
+      },
+      "human_action_required": false,
+      "specific_object_required": false,
+      "action_priority": "medium",
+      "scene_type": "contextual_scene",
+      "location_policy": "optional",
+      "visual_validation_rules": [
+        "Selected media must match the narration, not only the broad topic.",
+        "Reject clear anachronisms.",
+        "Prefer authentic historical footage, archival photographs, scans, documents and institutional archives.",
+        "Never use ECT imagery to illustrate behavioral aversion therapy unless narration is explicitly discussing ECT.",
+        "Never use aversion-therapy imagery to illustrate modern ECT.",
+        "When a specific person, document, year or institution is named, prefer media directly connected to it."
+      ]
+    }
+  ]
+}

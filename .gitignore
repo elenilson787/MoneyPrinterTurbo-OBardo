@@ -45,3 +45,111 @@ htmlcov/
 
 # Claude Code 订阅令牌（docker compose 自动读取），禁止提交
 .env
+
+# ============================================================
+# O BARDO - ARQUIVOS LOCAIS / TEMPORARIOS / BACKUPS
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets / environment
+.env
+.env.*
+!.env.example
+
+# YouTube cookies - NUNCA subir
+cookies-youtube.txt
+*cookies*.txt
+
+# Logs
+*.log
+
+# Videos and generated media
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.webm
+*.wav
+*.mp3
+
+# Backup files created during O Bardo development
+*.bak-*
+*.before-*
+*.obardo-backup
+*.backup
+*-backup
+*.semantic-backup
+*.timeline-backup
+*.context-prune-backup
+*.context-ranking-backup
+*.deno-backup
+*.ejs-fix-backup
+*.entity-auto-backup
+*.fine-window-backup
+*.frames-backup
+*.hq-clip-backup
+*.hq-source-backup
+*.identity-aliases-backup
+*.identity-gate-backup
+*.master-resolver-backup
+*.media-router-backup
+*.narration-windows-backup
+*.openclip-backup
+*.periodic-sampling-backup
+*.preview-backup
+*.preview-tournament-backup
+*.resolver-backup
+*.resolver-context-filter-backup
+*.roman-context-gate-backup
+*.scene-detection-backup
+*.scene-windows-backup
+*.visual-intent-backup
+*.youtube-ranking-backup
+*.youtube-search-backup
+*.hybrid-backup
+
+# Temporary Python files
+*_tmp.py
+*_tmp.*
+*_current.txt
+*-current.txt
+
+# Diagnostics / benchmarks
+*diagnostic*.txt
+*diagnostic*.log
+*benchmark*.log
+*inspection*.txt
+*diff.txt
+
+# IDE / Windows
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Generic temp/cache
+tmp/
+temp/
+.cache/
+storage/obardo_temp/
+storage/temp/
+storage/cache/
+
+
+# O Bardo - backups adicionais
+*.pre-search-quality
+*_backup.py
+*_backup.*
+*_pre_*_backup.py
+

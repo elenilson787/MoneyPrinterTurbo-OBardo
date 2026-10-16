@@ -1217,6 +1217,48 @@ def get_edge_tts_timeout_seconds() -> Union[float, None]:
     return timeout_seconds
 
 
+def get_edge_tts_max_retries() -> int:
+    raw_value = config.app.get(
+        "edge_tts_max_retries",
+        3,
+    )
+
+    try:
+        value = int(raw_value)
+    except (TypeError, ValueError):
+        logger.warning(
+            "invalid edge_tts_max_retries: "
+            f"{raw_value}, fallback to 3"
+        )
+        value = 3
+
+    return max(
+        1,
+        min(value, 10),
+    )
+
+
+def get_edge_tts_retry_delay_seconds() -> float:
+    raw_value = config.app.get(
+        "edge_tts_retry_delay_seconds",
+        2,
+    )
+
+    try:
+        value = float(raw_value)
+    except (TypeError, ValueError):
+        logger.warning(
+            "invalid edge_tts_retry_delay_seconds: "
+            f"{raw_value}, fallback to 2s"
+        )
+        value = 2.0
+
+    return max(
+        0.0,
+        min(value, 30.0),
+    )
+
+
 def _stream_edge_tts_sync_with_timeout(
     communicate, on_chunk, timeout_seconds: float
 ) -> None:
@@ -1323,9 +1365,21 @@ def azure_tts_v1(
     voice_name = parse_voice_name(voice_name)
     text = text.strip()
     rate_str = convert_rate_to_percent(voice_rate)
-    for i in range(3):
+
+    max_retries = get_edge_tts_max_retries()
+    retry_delay_seconds = (
+        get_edge_tts_retry_delay_seconds()
+    )
+
+    import time as _time
+
+    for i in range(max_retries):
         try:
-            logger.info(f"start, voice name: {voice_name}, try: {i + 1}")
+            logger.info(
+                "start, "
+                f"voice name: {voice_name}, "
+                f"try: {i + 1}/{max_retries}"
+            )
 
             # 这里同时兼容 edge_tts 7.x 和旧版便携包里可能残留的老依赖：
             # 1. 新版支持 `boundary` + `stream_sync()`
@@ -1351,7 +1405,22 @@ def azure_tts_v1(
                 )
 
             if not sub_maker.get_srt():
-                logger.warning("failed, sub_maker.get_srt() is empty")
+                logger.warning(
+                    "failed, sub_maker.get_srt() is empty"
+                )
+
+                if (
+                    i + 1 < max_retries
+                    and retry_delay_seconds > 0
+                ):
+                    logger.info(
+                        "Edge TTS retry delay | "
+                        f"seconds={retry_delay_seconds:g}"
+                    )
+                    _time.sleep(
+                        retry_delay_seconds
+                    )
+
                 continue
 
             logger.info(f"completed, output file: {voice_file}")
@@ -1369,6 +1438,19 @@ def azure_tts_v1(
                         "failed to remove empty tts file: "
                         f"{voice_file}, error: {str(remove_error)}"
                     )
+
+            if (
+                i + 1 < max_retries
+                and retry_delay_seconds > 0
+            ):
+                logger.info(
+                    "Edge TTS retry delay | "
+                    f"seconds={retry_delay_seconds:g}"
+                )
+                _time.sleep(
+                    retry_delay_seconds
+                )
+
     return None
 
 
@@ -2069,9 +2151,92 @@ def elevenlabs_tts(
         return None
 
     if not model_id:
-        model_id = config.elevenlabs.get("model_id", "eleven_multilingual_v2")
+        model_id = config.elevenlabs.get(
+            "model_id",
+            "eleven_multilingual_v2",
+        )
 
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
+    raw_timeout = config.elevenlabs.get(
+        "timeout_seconds",
+        90,
+    )
+    try:
+        timeout_seconds = float(
+            raw_timeout
+        )
+    except (TypeError, ValueError):
+        logger.warning(
+            "invalid ElevenLabs timeout_seconds: "
+            f"{raw_timeout}, fallback to 90s"
+        )
+        timeout_seconds = 90.0
+
+    timeout_seconds = max(
+        1.0,
+        min(timeout_seconds, 600.0),
+    )
+
+    raw_max_retries = config.elevenlabs.get(
+        "max_retries",
+        3,
+    )
+    try:
+        max_retries = int(
+            raw_max_retries
+        )
+    except (TypeError, ValueError):
+        logger.warning(
+            "invalid ElevenLabs max_retries: "
+            f"{raw_max_retries}, fallback to 3"
+        )
+        max_retries = 3
+
+    max_retries = max(
+        1,
+        min(max_retries, 10),
+    )
+
+    raw_retry_delay = config.elevenlabs.get(
+        "retry_delay_seconds",
+        2,
+    )
+    try:
+        retry_delay_seconds = float(
+            raw_retry_delay
+        )
+    except (TypeError, ValueError):
+        logger.warning(
+            "invalid ElevenLabs retry_delay_seconds: "
+            f"{raw_retry_delay}, fallback to 2s"
+        )
+        retry_delay_seconds = 2.0
+
+    retry_delay_seconds = max(
+        0.0,
+        min(retry_delay_seconds, 30.0),
+    )
+
+    output_format = str(
+        config.elevenlabs.get(
+            "output_format",
+            "mp3_44100_128",
+        )
+        or "mp3_44100_128"
+    ).strip()
+
+    url = (
+        "https://api.elevenlabs.io/v1/"
+        f"text-to-speech/{voice_id}"
+    )
+
+    request_params = {}
+
+    if output_format:
+        request_params[
+            "output_format"
+        ] = output_format
+
+    import time as _time
     headers = {
         "xi-api-key": api_key,
         "Content-Type": "application/json",
@@ -2091,12 +2256,25 @@ def elevenlabs_tts(
     _NON_RETRYABLE_CODES = {401, 403, 422}
     _NON_RETRYABLE_STATUSES = {"voice_disabled", "voice_access_denied", "unauthorized"}
 
-    for i in range(3):
+    for i in range(max_retries):
         try:
-            logger.info(f"start elevenlabs tts, voice_id: {voice_id}, try: {i + 1}")
-            ensure_file_path_exists(voice_file)
+            logger.info(
+                "start elevenlabs tts, "
+                f"voice_id: {voice_id}, "
+                f"try: {i + 1}/{max_retries}"
+            )
 
-            response = requests.post(url, json=payload, headers=headers, timeout=60)
+            ensure_file_path_exists(
+                voice_file
+            )
+
+            response = requests.post(
+                url,
+                params=request_params,
+                json=payload,
+                headers=headers,
+                timeout=timeout_seconds,
+            )
             if response.status_code != 200:
                 error_status = ""
                 try:
@@ -2115,8 +2293,23 @@ def elevenlabs_tts(
                     return None
 
                 logger.error(
-                    f"elevenlabs tts failed with status {response.status_code}: {response.text[:200]}"
+                    "elevenlabs tts failed with status "
+                    f"{response.status_code}: "
+                    f"{response.text[:200]}"
                 )
+
+                if (
+                    i + 1 < max_retries
+                    and retry_delay_seconds > 0
+                ):
+                    logger.info(
+                        "ElevenLabs retry delay | "
+                        f"seconds={retry_delay_seconds:g}"
+                    )
+                    _time.sleep(
+                        retry_delay_seconds
+                    )
+
                 continue
 
             with open(voice_file, "wb") as f:
@@ -2136,7 +2329,21 @@ def elevenlabs_tts(
                 audio_duration_seconds=audio_duration,
             )
         except Exception as e:
-            logger.error(f"elevenlabs tts failed: {str(e)}")
+            logger.error(
+                f"elevenlabs tts failed: {str(e)}"
+            )
+
+            if (
+                i + 1 < max_retries
+                and retry_delay_seconds > 0
+            ):
+                logger.info(
+                    "ElevenLabs retry delay | "
+                    f"seconds={retry_delay_seconds:g}"
+                )
+                _time.sleep(
+                    retry_delay_seconds
+                )
 
     return None
 
